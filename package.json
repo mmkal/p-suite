@@ -1,0 +1,294 @@
+{
+  "name": "p-suite",
+  "version": "0.0.1",
+  "description": "A collection of useful promise utilities",
+  "type": "module",
+  "packageManager": "pnpm@8.15.6",
+  "scripts": {
+    "generate": "node generate.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "promise",
+    "memoize",
+    "mem",
+    "memoization",
+    "function",
+    "cache",
+    "caching",
+    "optimize",
+    "performance",
+    "ttl",
+    "expire",
+    "async",
+    "await",
+    "promises",
+    "time",
+    "out",
+    "cancel",
+    "bluebird"
+  ],
+  "author": "mmkal",
+  "files": [
+    "source"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "execa": "^9.4.0",
+    "type-fest": "^4.26.1",
+    "vitest": "^2.1.2"
+  },
+  "dependencies": {
+    "delay": "^6.0.0",
+    "make-synchronous": "^1.0.0",
+    "p-all": "^5.0.0",
+    "p-any": "^4.0.0",
+    "p-break": "^2.0.0",
+    "p-cancelable": "^4.0.1",
+    "p-catch-if": "^3.0.0",
+    "p-debounce": "^4.0.0",
+    "p-defer": "^4.0.1",
+    "p-do-whilst": "^2.1.0",
+    "p-each-series": "^3.0.0",
+    "p-event": "^6.0.1",
+    "p-filter": "^4.1.0",
+    "p-forever": "^3.0.1",
+    "p-if": "^3.0.0",
+    "p-immediate": "^4.0.0",
+    "p-is-promise": "^4.0.0",
+    "p-lazy": "^4.0.0",
+    "p-limit": "^6.1.0",
+    "p-locate": "^6.0.0",
+    "p-log": "^3.0.0",
+    "p-map": "^7.0.2",
+    "p-map-series": "^3.0.0",
+    "p-memoize": "^7.1.1",
+    "p-min-delay": "^4.0.2",
+    "p-mutex": "^0.1.0",
+    "p-pipe": "^4.0.0",
+    "p-progress": "^1.0.0",
+    "p-props": "^6.0.0",
+    "p-queue": "^8.0.1",
+    "p-race": "^3.1.0",
+    "p-reduce": "^3.0.0",
+    "p-reflect": "^3.1.0",
+    "p-retry": "^6.2.0",
+    "p-series": "^3.0.0",
+    "p-settle": "^5.1.1",
+    "p-some": "^6.0.0",
+    "p-state": "^2.0.1",
+    "p-tap": "^4.0.0",
+    "p-throttle": "^6.2.0",
+    "p-time": "^4.0.0",
+    "p-timeout": "^6.1.2",
+    "p-times": "^4.0.0",
+    "p-try": "^3.0.0",
+    "p-wait-for": "^5.0.2",
+    "p-waterfall": "^3.0.0",
+    "p-whilst": "^3.1.0",
+    "pify": "^6.1.0",
+    "yoctodelay": "^2.0.0"
+  },
+  "exports": {
+    "./pify": {
+      "types": "./source/pify.d.ts",
+      "default": "./source/pify.js"
+    },
+    "./delay": {
+      "types": "./source/delay.d.ts",
+      "default": "./source/delay.js"
+    },
+    "./yoctodelay": {
+      "types": "./source/yoctodelay.d.ts",
+      "default": "./source/yoctodelay.js"
+    },
+    "./p-map": {
+      "types": "./source/p-map.d.ts",
+      "default": "./source/p-map.js"
+    },
+    "./p-all": {
+      "types": "./source/p-all.d.ts",
+      "default": "./source/p-all.js"
+    },
+    "./p-event": {
+      "types": "./source/p-event.d.ts",
+      "default": "./source/p-event.js"
+    },
+    "./p-debounce": {
+      "types": "./source/p-debounce.d.ts",
+      "default": "./source/p-debounce.js"
+    },
+    "./p-throttle": {
+      "types": "./source/p-throttle.d.ts",
+      "default": "./source/p-throttle.js"
+    },
+    "./p-timeout": {
+      "types": "./source/p-timeout.d.ts",
+      "default": "./source/p-timeout.js"
+    },
+    "./p-retry": {
+      "types": "./source/p-retry.d.ts",
+      "default": "./source/p-retry.js"
+    },
+    "./p-any": {
+      "types": "./source/p-any.d.ts",
+      "default": "./source/p-any.js"
+    },
+    "./p-some": {
+      "types": "./source/p-some.d.ts",
+      "default": "./source/p-some.js"
+    },
+    "./p-mutex": {
+      "types": "./source/p-mutex.d.ts",
+      "default": "./source/p-mutex.js"
+    },
+    "./p-locate": {
+      "types": "./source/p-locate.d.ts",
+      "default": "./source/p-locate.js"
+    },
+    "./p-limit": {
+      "types": "./source/p-limit.d.ts",
+      "default": "./source/p-limit.js"
+    },
+    "./p-series": {
+      "types": "./source/p-series.d.ts",
+      "default": "./source/p-series.js"
+    },
+    "./p-memoize": {
+      "types": "./source/p-memoize.d.ts",
+      "default": "./source/p-memoize.js"
+    },
+    "./p-pipe": {
+      "types": "./source/p-pipe.d.ts",
+      "default": "./source/p-pipe.js"
+    },
+    "./p-props": {
+      "types": "./source/p-props.d.ts",
+      "default": "./source/p-props.js"
+    },
+    "./p-waterfall": {
+      "types": "./source/p-waterfall.d.ts",
+      "default": "./source/p-waterfall.js"
+    },
+    "./p-cancelable": {
+      "types": "./source/p-cancelable.d.ts",
+      "default": "./source/p-cancelable.js"
+    },
+    "./p-progress": {
+      "types": "./source/p-progress.d.ts",
+      "default": "./source/p-progress.js"
+    },
+    "./p-reflect": {
+      "types": "./source/p-reflect.d.ts",
+      "default": "./source/p-reflect.js"
+    },
+    "./p-filter": {
+      "types": "./source/p-filter.d.ts",
+      "default": "./source/p-filter.js"
+    },
+    "./p-reduce": {
+      "types": "./source/p-reduce.d.ts",
+      "default": "./source/p-reduce.js"
+    },
+    "./p-settle": {
+      "types": "./source/p-settle.d.ts",
+      "default": "./source/p-settle.js"
+    },
+    "./p-map-series": {
+      "types": "./source/p-map-series.d.ts",
+      "default": "./source/p-map-series.js"
+    },
+    "./p-each-series": {
+      "types": "./source/p-each-series.d.ts",
+      "default": "./source/p-each-series.js"
+    },
+    "./p-times": {
+      "types": "./source/p-times.d.ts",
+      "default": "./source/p-times.js"
+    },
+    "./p-lazy": {
+      "types": "./source/p-lazy.d.ts",
+      "default": "./source/p-lazy.js"
+    },
+    "./p-whilst": {
+      "types": "./source/p-whilst.d.ts",
+      "default": "./source/p-whilst.js"
+    },
+    "./p-do-whilst": {
+      "types": "./source/p-do-whilst.d.ts",
+      "default": "./source/p-do-whilst.js"
+    },
+    "./p-forever": {
+      "types": "./source/p-forever.d.ts",
+      "default": "./source/p-forever.js"
+    },
+    "./p-wait-for": {
+      "types": "./source/p-wait-for.d.ts",
+      "default": "./source/p-wait-for.js"
+    },
+    "./p-min-delay": {
+      "types": "./source/p-min-delay.d.ts",
+      "default": "./source/p-min-delay.js"
+    },
+    "./p-try": {
+      "types": "./source/p-try.d.ts",
+      "default": "./source/p-try.js"
+    },
+    "./p-race": {
+      "types": "./source/p-race.d.ts",
+      "default": "./source/p-race.js"
+    },
+    "./p-immediate": {
+      "types": "./source/p-immediate.d.ts",
+      "default": "./source/p-immediate.js"
+    },
+    "./p-time": {
+      "types": "./source/p-time.d.ts",
+      "default": "./source/p-time.js"
+    },
+    "./p-defer": {
+      "types": "./source/p-defer.d.ts",
+      "default": "./source/p-defer.js"
+    },
+    "./p-is-promise": {
+      "types": "./source/p-is-promise.d.ts",
+      "default": "./source/p-is-promise.js"
+    },
+    "./p-state": {
+      "types": "./source/p-state.d.ts",
+      "default": "./source/p-state.js"
+    },
+    "./p-queue": {
+      "types": "./source/p-queue.d.ts",
+      "default": "./source/p-queue.js"
+    },
+    "./make-synchronous": {
+      "types": "./source/make-synchronous.d.ts",
+      "default": "./source/make-synchronous.js"
+    },
+    "./p-catch-if": {
+      "types": "./source/p-catch-if.d.ts",
+      "default": "./source/p-catch-if.js"
+    },
+    "./p-if": {
+      "types": "./source/p-if.d.ts",
+      "default": "./source/p-if.js"
+    },
+    "./p-tap": {
+      "types": "./source/p-tap.d.ts",
+      "default": "./source/p-tap.js"
+    },
+    "./p-log": {
+      "types": "./source/p-log.d.ts",
+      "default": "./source/p-log.js"
+    },
+    "./p-break": {
+      "types": "./source/p-break.d.ts",
+      "default": "./source/p-break.js"
+    },
+    ".": {
+      "types": "./source/index.d.ts",
+      "default": "./source/index.js"
+    }
+  }
+}

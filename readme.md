@@ -1,11 +1,44 @@
-# promise-fun
+# p-suite
 
-I intend to use this space to document my promise modules, useful promise patterns, and how to solve common problems. For now though, you can see all my promise modules below.
+A collection of all of sindresorhus promise modules. This is a fork of [promise-fun](https://github.com/sindresorhus/promise-fun) - with the intention that it's either back into it, if sindresorhus want to own and maintain it, or otherwise it will be periodically updated with the latest upstream changes (likely, any package additions).
 
 ## Contents
 
 - [Packages](#packages)
+- [Installation](#installation)
+- [Usage](#usage)
 - [FAQ](#faq)
+- [Contributing](#contributing)
+
+## Installation
+
+```
+npm install p-suite
+```
+
+## Usage
+
+```ts
+import pMemoize from 'p-suite/p-memoize'
+
+const memoized = pMemoize(myFunction)
+```
+
+Or you can use the barrel file if you are confident in your tree-shaker:
+
+```ts
+import {pMemoize} from 'p-suite'
+
+const memoized = pMemoize.default(myFunction)
+```
+
+Note that that you need to use `.default` explicitly - there's no mapping of default to named exports.
+
+## When should you use p-suite?
+
+If you're not sure which promise module you want to use yet, or you want to use a combination of them, you can get them all from a single install. However, it's very unlikely that you'll need them all, so if you are concerned about the size of your node_modules, you should install the individual packages.
+
+For browser usage, or if bundle size is a concern for any other reason, you should be able to use the individual exports (for example `import pMemoize from 'p-suite/p-memoize'`) without negatively impacting your bundle size. But make sure to test this using a bundle analyzer if you're concerned.
 
 ## Packages
 
@@ -73,7 +106,7 @@ I intend to use this space to document my promise modules, useful promise patter
 This is a good use-case for [`p-map`](https://github.com/sindresorhus/p-map). You might ask why you can't just specify an array of promises. Promises represent values of a computation and not the computation itself - they are eager. So by the time `p-map` starts reading the array, all the actions creating those promises have already started running. `p-map` works by executing a promise-returning function in a mapper function. This way the promises are created lazily and can be concurrency limited. Check out [`p-all`](https://github.com/sindresorhus/p-all) instead if you're using different functions to get each promise.
 
 ```js
-import pMap from 'p-map';
+import pMap from 'p-suite/p-map';
 
 const urls = [
 	'https://sindresorhus.com',
@@ -92,3 +125,15 @@ const result = await pMap(urls, mapper, {concurrency: 5});
 console.log(result);
 //=> [{url: 'https://sindresorhus.com', stats: {…}}, …]
 ```
+
+### When is p-suite updated and published?
+
+There is a scheduled GitHub Actions workflow that will update p-suite with the latest versions of all its dependencies, once per week. Publishing is *not* automated, however, so major version updates will be made ad-hoc. In general, there will likely be a major version update whenever at least one of the dependency packages is updated.
+
+[pkg.pr.new](https://pkg.pr.new) is enabled on the repository, so you can try a prerelease version even without an npm publish of p-suite by looking at the checks for the default branch.
+
+## Contributing
+
+The package.json dependencies and exports are generated from this readme. So, to add a new package, it should be added to the readme with the same format as the others. There is an automated GitHub Actions workflow that will automatically update the package.json exports and dependencies, as well as the javascript and typescript files.
+
+If you need to change the code in the `source/` folder, don't modify it directly. Instead, make the change in `generate.js` which generates it.

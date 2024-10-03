@@ -1,0 +1,13 @@
+name: CI
+on: [push]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: corepack enable
+      - run: pnpm install
+      - run: pnpm generate
+      - run: git diff --exit-code # make sure it's up to date
+      - run: pnpx pkg-pr-new publish
