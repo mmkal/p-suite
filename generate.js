@@ -3,6 +3,8 @@ import * as fs from 'fs'
 import * as path from 'path'
 import {execa} from 'execa'
 import {fileURLToPath} from 'url'
+import {readPackageUpSync} from 'read-package-up'
+import * as semver from 'semver'
 
 const generate = async () => {
     const cwd = process.cwd()
@@ -16,9 +18,12 @@ const generate = async () => {
         .map(name => {
             const mainModulePath = fileURLToPath(import.meta.resolve(name))
             const mainModuleContent = fs.readFileSync(mainModulePath, 'utf8')
+            const pkg = readPackageUpSync({cwd: path.dirname(mainModulePath)})
             return {
                 package: name,
                 mainModulePath,
+                packageJson: pkg.packageJson,
+                packageJsonPath: pkg.path,
                 mainModuleContent,
                 hasDefaultExport: mainModuleContent.includes('export default'),
                 camelCaseName: name.replace(/-(\w)/g, m => m[1].toUpperCase()),
@@ -27,8 +32,7 @@ const generate = async () => {
 
     await execa('pnpm', ['install', ...packages.map(p => `${p.package}@latest`)]);
 
-    /** @type {import('type-fest').PackageJson} */
-    const packageJson = JSON.parse(fs.readFileSync(path.join(cwd, 'package.json'), 'utf8'));
+    const {packageJson} = readPackageUpSync({cwd})
 
     packageJson.exports = {}
     const sourceDirectory = path.join(cwd, 'source')
@@ -46,15 +50,6 @@ const generate = async () => {
         }
     }
     const barrel = packages.flatMap(p => {
-        if (Math.random()) {
-            return [`export * as ${p.camelCaseName} from './${p.package}'`]
-        }
-        if (p.hasDefaultExport) {
-            return [
-                `export * from '${p.package}'`,
-                `export {default as ${p.camelCaseName}} from '${p.package}'`,
-            ]
-        }
         return [`export * as ${p.camelCaseName} from './${p.package}'`]
     }).join('\n')
     fs.writeFileSync(path.join(cwd, 'source', 'index.js'), barrel)
@@ -63,6 +58,28 @@ const generate = async () => {
     packageJson.exports['.'] = {
         types: './source/index.d.ts',
         default: './source/index.js',
+    }
+
+    packageJson.engines = {}
+    packages.forEach(p => {
+        const {engines} = p.packageJson
+        if (!engines) return
+        Object.entries(engines).forEach(([tool, versionString]) => {
+            const parts = versionString.split(' || ').flatMap(versionString => {
+                const joined = [packageJson.engines[tool], versionString].filter(Boolean).join(' ')
+                const minVersion = semver.minVersion(joined)
+                if (!minVersion) return []
+
+                return `>=${minVersion.version}`
+            })
+
+            packageJson.engines[tool] = parts.join(' || ')
+        })
+    })
+
+    delete packageJson._id
+    if (packageJson.readme === 'ERROR: No README data found!') {
+        delete packageJson.readme
     }
 
     fs.writeFileSync(path.join(cwd, 'package.json'), JSON.stringify(packageJson, null, 2), 'utf8');

@@ -4,6 +4,9 @@
   "description": "A collection of useful promise utilities",
   "type": "module",
   "packageManager": "pnpm@8.15.6",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "generate": "node generate.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -28,14 +31,18 @@
     "cancel",
     "bluebird"
   ],
-  "author": "mmkal",
+  "author": {
+    "name": "mmkal"
+  },
   "files": [
     "source"
   ],
   "license": "ISC",
   "devDependencies": {
+    "@types/semver": "^7.5.8",
     "execa": "^9.4.0",
-    "type-fest": "^4.26.1",
+    "read-package-up": "^11.0.0",
+    "semver": "^7.6.3",
     "vitest": "^2.1.2"
   },
   "dependencies": {
