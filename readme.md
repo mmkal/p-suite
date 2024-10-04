@@ -137,3 +137,30 @@ There is a scheduled GitHub Actions workflow that will update p-suite with the l
 The package.json dependencies and exports are generated from this readme. So, to add a new package, it should be added to the readme with the same format as the others. There is an automated GitHub Actions workflow that will automatically update the package.json exports and dependencies, as well as the javascript and typescript files.
 
 If you need to change the code in the `source/` folder, don't modify it directly. Instead, make the change in `generate.js` which generates it.
+
+Implementation (what this fork adds to sindresorhus's original repo):
+
+- adds a package.json (named `p-suite` rather than `promise-fun` since that npm package name is taken on npm)
+- add a `generate.js` script which:
+   - parses the readme to get all the packages that should be included
+   - installs the latest versions of all packages 
+   - creates `.js` and `.d.ts` files for each package (e.g. `export * from 'p-memoize'`)
+   - creates a barrel file re-exporting all the packages (e.g. `export * as pMemoize from 'p-memoize'`)
+   - adds an `exports` definition pointing to each re-export file
+   - calculates an `engines.node` range that satisfies all the sub-packages*
+- add tests (right now, just making sure an example module works at runtime and typescript-compile time)
+- add CI:
+   - run the generate script to make sure everything's up to date
+   - use autofix.ci to push an update if not
+   - run some tests (right now, just makes sure that types + runtime were generated properly for p-memoize)
+   - use pkg.pr.new to publish a prerelease version (so you can try this out right now: `npm install https://pkg.pr.new/mmkal/p-suite@8c181db` - [link](https://github.com/mmkal/p-suite/runs/31040343982))
+
+The idea is that everything should be fully automated, so maintenance should be as simple as `git pull && pnpm install && pnpm generate`.
+
+Personally I would be open to adding some other useful tools that fit well with p-* packages like `expiry-map`, but I'll hold off on that until there's an indication one way or another whether @sindresorhus would like to co-maintain this!
+
+I'm creating it as a draft since it'd be a reasonably big ask for you to accept this. I'm happy to leave it for a few days and rely on the pkg.pr.new link before publishing to npm.
+
+---
+
+*note: the algorithm to detect the minimum required node version depends on the `semver` package's various helpers. It isn't bullet-proof, but from debugging manually it seems good enough. This unfortunately isn't part of semver: https://github.com/npm/node-semver/issues/527. If it breaks down in future it will show up in the generated package.json though.
