@@ -19,7 +19,6 @@ const generate = async () => {
             const mainModulePath = fileURLToPath(import.meta.resolve(name))
             const mainModuleContent = fs.readFileSync(mainModulePath, 'utf8')
             const pkg = readPackageUpSync({cwd: path.dirname(mainModulePath)})
-            // console.log(name, 'engines', pkg.packageJson.engines)
             return {
                 package: name,
                 mainModulePath,

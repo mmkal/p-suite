@@ -10,4 +10,5 @@ jobs:
       - run: pnpm install
       - run: pnpm generate
       - run: git diff --exit-code # make sure it's up to date
+      - run: pnpm test
       - run: pnpx pkg-pr-new publish
