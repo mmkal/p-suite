@@ -7,6 +7,14 @@
   "engines": {
     "node": ">=18.0.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmkal/p-suite.git"
+  },
+  "homepage": "https://github.com/mmkal/p-suite#readme",
+  "bugs": {
+    "url": "https://github.com/mmkal/p-suite/issues"
+  },
   "scripts": {
     "generate": "node generate.js",
     "test": "vitest run"

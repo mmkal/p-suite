@@ -1,6 +1,6 @@
 # p-suite
 
-A collection of all of sindresorhus promise modules. This is a fork of [promise-fun](https://github.com/sindresorhus/promise-fun) - with the intention that it's either back into it, if sindresorhus want to own and maintain it, or otherwise it will be periodically updated with the latest upstream changes (likely, any package additions).
+A collection of all of sindresorhus promise modules. This is a fork of [promise-fun](https://github.com/sindresorhus/promise-fun). It will be periodically updated with the latest upstream changes (any package additions/removals etc.).
 
 ## Contents
 
@@ -126,9 +126,13 @@ console.log(result);
 //=> [{url: 'https://sindresorhus.com', stats: {…}}, …]
 ```
 
+### Is this affiliated with sindresorhus?
+
+No. It's a fork of the [promise-fun](https://github.com/sindresorhus/promise-fun) repo, but that only consists of a hand-written readme file pointing to the various other packages. Sindre very reasonably [did not want to maintain](https://github.com/sindresorhus/promise-fun/pull/26) a generated monopackage. It's also worth noting that as JavaScript develops some of the packages are less necessary - a handful of them existed before async/await, so only use as needed.
+
 ### When is p-suite updated and published?
 
-There is a scheduled GitHub Actions workflow that will update p-suite with the latest versions of all its dependencies, once per week. Publishing is *not* automated, however, so major version updates will be made ad-hoc. In general, there will likely be a major version update whenever at least one of the dependency packages is updated.
+There is a scheduled GitHub Actions workflow that will update p-suite with the latest versions of all its dependencies, once per day. Publishing is *not* automated, however, so major version updates will be made ad-hoc. In general, there will likely be a major version update whenever at least one of the dependency packages is updated.
 
 [pkg.pr.new](https://pkg.pr.new) is enabled on the repository, so you can try a prerelease version even without an npm publish of p-suite by looking at the checks for the default branch.
 
