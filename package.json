@@ -1,6 +1,6 @@
 {
   "name": "p-suite",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A collection of useful promise utilities",
   "type": "module",
   "packageManager": "pnpm@8.15.6",
