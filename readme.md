@@ -1,6 +1,6 @@
 # p-suite
 
-A collection of all of sindresorhus promise modules. This is a fork of [promise-fun](https://github.com/sindresorhus/promise-fun). It will be periodically updated with the latest upstream changes (any package additions/removals etc.).
+A collection of all of sindresorhus promise modules. This is a fork of [promise-fun](https://github.com/sindresorhus/promise-fun). It will be periodically updated with the latest upstream changes - package additions/removals etc.
 
 ## Contents
 
