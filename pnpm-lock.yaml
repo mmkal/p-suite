@@ -57,11 +57,11 @@ dependencies:
     specifier: ^4.0.0
     version: 4.0.0
   p-lazy:
-    specifier: ^4.0.0
-    version: 4.0.0
+    specifier: ^5.0.0
+    version: 5.0.0
   p-limit:
-    specifier: ^6.1.0
-    version: 6.1.0
+    specifier: ^6.2.0
+    version: 6.2.0
   p-locate:
     specifier: ^6.0.0
     version: 6.0.0
@@ -69,8 +69,8 @@ dependencies:
     specifier: ^3.0.0
     version: 3.0.0
   p-map:
-    specifier: ^7.0.2
-    version: 7.0.2
+    specifier: ^7.0.3
+    version: 7.0.3
   p-map-series:
     specifier: ^3.0.0
     version: 3.0.0
@@ -93,8 +93,8 @@ dependencies:
     specifier: ^6.0.0
     version: 6.0.0
   p-queue:
-    specifier: ^8.0.1
-    version: 8.0.1
+    specifier: ^8.1.0
+    version: 8.1.0
   p-race:
     specifier: ^3.1.0
     version: 3.1.0
@@ -105,8 +105,8 @@ dependencies:
     specifier: ^3.1.0
     version: 3.1.0
   p-retry:
-    specifier: ^6.2.0
-    version: 6.2.0
+    specifier: ^6.2.1
+    version: 6.2.1
   p-series:
     specifier: ^3.0.0
     version: 3.0.0
@@ -123,14 +123,14 @@ dependencies:
     specifier: ^4.0.0
     version: 4.0.0
   p-throttle:
-    specifier: ^6.2.0
-    version: 6.2.0
+    specifier: ^7.0.0
+    version: 7.0.0
   p-time:
     specifier: ^4.0.0
     version: 4.0.0
   p-timeout:
-    specifier: ^6.1.2
-    version: 6.1.2
+    specifier: ^6.1.4
+    version: 6.1.4
   p-times:
     specifier: ^4.0.0
     version: 4.0.0
@@ -144,8 +144,8 @@ dependencies:
     specifier: ^3.0.0
     version: 3.0.0
   p-whilst:
-    specifier: ^3.1.0
-    version: 3.1.0
+    specifier: ^3.2.0
+    version: 3.2.0
   pify:
     specifier: ^6.1.0
     version: 6.1.0
@@ -1014,14 +1014,14 @@ packages:
     resolution: {integrity: sha512-Q6Bekk5wpzW5qIyUP4gdMEujObYstZl6DMMOSenwBvV0BlE5LkDwkjs5yHbZmdCEq2o4RJx4tE1vwxFVf2FG1w==}
     engines: {node: '>=16.17'}
     dependencies:
-      p-timeout: 6.1.2
+      p-timeout: 6.1.4
     dev: false
 
   /p-filter@4.1.0:
     resolution: {integrity: sha512-37/tPdZ3oJwHaS3gNJdenCDB3Tz26i9sjhnguBtvN0vYlRIiDNnvTWkuh+0hETV9rLPdJ3rlL3yVOYPIAnM8rw==}
     engines: {node: '>=18'}
     dependencies:
-      p-map: 7.0.2
+      p-map: 7.0.3
     dev: false
 
   /p-forever@3.0.1:
@@ -1044,9 +1044,9 @@ packages:
     engines: {node: '>=12'}
     dev: false
 
-  /p-lazy@4.0.0:
-    resolution: {integrity: sha512-8lIogVWwqBkiBy4FpylVHLalB9dZ25B2zBdY4OGGknDPWB7ehf2jyxmbh8z3MZsfbERLNU266h9Yx3cxHn3lFg==}
-    engines: {node: '>=12'}
+  /p-lazy@5.0.0:
+    resolution: {integrity: sha512-C4xW5/wLGqswBx1xgu/t7fBaHMDKm7SXycgc0MEQvQ5KwzjT1E4MmE9cg0RXn9d0MTgUGJLUCb2EkLBevXi6eA==}
+    engines: {node: '>=18'}
     dev: false
 
   /p-limit@4.0.0:
@@ -1056,8 +1056,8 @@ packages:
       yocto-queue: 1.1.1
     dev: false
 
-  /p-limit@6.1.0:
-    resolution: {integrity: sha512-H0jc0q1vOzlEk0TqAKXKZxdl7kX3OFUzCnNVUnq5Pc3DGo0kpeaMuPqxQn235HibwBEb0/pm9dgKTjXy66fBkg==}
+  /p-limit@6.2.0:
+    resolution: {integrity: sha512-kuUqqHNUqoIWp/c467RI4X6mmyuojY5jGutNU0wVTmEOOfcuwLqyMVoAi9MKi2Ak+5i9+nhmrK4ufZE8069kHA==}
     engines: {node: '>=18'}
     dependencies:
       yocto-queue: 1.1.1
@@ -1094,8 +1094,8 @@ packages:
     engines: {node: '>=16'}
     dev: false
 
-  /p-map@7.0.2:
-    resolution: {integrity: sha512-z4cYYMMdKHzw4O5UkWJImbZynVIo0lSGTXc7bzB1e/rrDqkgGUNysK/o4bTr+0+xKvvLoTyGqYC4Fgljy9qe1Q==}
+  /p-map@7.0.3:
+    resolution: {integrity: sha512-VkndIv2fIB99swvQoA65bm+fsmt6UNdGeIB0oxBs+WhAhdh08QA04JXpI7rbB9r08/nkbysKoya9rtDERYOYMA==}
     engines: {node: '>=18'}
     dev: false
 
@@ -1140,12 +1140,12 @@ packages:
       p-map: 6.0.0
     dev: false
 
-  /p-queue@8.0.1:
-    resolution: {integrity: sha512-NXzu9aQJTAzbBqOt2hwsR63ea7yvxJc0PwN/zobNAudYfb1B7R08SzB4TsLeSbUCuG467NhnoT0oO6w1qRO+BA==}
+  /p-queue@8.1.0:
+    resolution: {integrity: sha512-mxLDbbGIBEXTJL0zEx8JIylaj3xQ7Z/7eEVjcF9fJX4DBiH9oqe+oahYnlKKxm0Ci9TlWTyhSHgygxMxjIB2jw==}
     engines: {node: '>=18'}
     dependencies:
       eventemitter3: 5.0.1
-      p-timeout: 6.1.2
+      p-timeout: 6.1.4
     dev: false
 
   /p-race@3.1.0:
@@ -1165,8 +1165,8 @@ packages:
     engines: {node: '>=12'}
     dev: false
 
-  /p-retry@6.2.0:
-    resolution: {integrity: sha512-JA6nkq6hKyWLLasXQXUrO4z8BUZGUt/LjlJxx8Gb2+2ntodU/SS63YZ8b0LUTbQ8ZB9iwOfhEPhg4ykKnn2KsA==}
+  /p-retry@6.2.1:
+    resolution: {integrity: sha512-hEt02O4hUct5wtwg4H4KcWgDdm+l1bOaEy/hWzd8xtXB9BqxTWBBhb+2ImAtH4Cv4rPjV76xN3Zumqk3k3AhhQ==}
     engines: {node: '>=16.17'}
     dependencies:
       '@types/retry': 0.12.2
@@ -1205,8 +1205,8 @@ packages:
     engines: {node: '>=12'}
     dev: false
 
-  /p-throttle@6.2.0:
-    resolution: {integrity: sha512-NCKkOVj6PZa6NiTmfvGilDdf6vO1rFCD3KDnkHko8dTOtkpk4cSR/VTAhhLMG9aiQ7/A9HYgEDNmxzf6hxzR3g==}
+  /p-throttle@7.0.0:
+    resolution: {integrity: sha512-aio0v+S0QVkH1O+9x4dHtD4dgCExACcL+3EtNaGqC01GBudS9ijMuUsmN8OVScyV4OOp0jqdLShZFuSlbL/AsA==}
     engines: {node: '>=18'}
     dev: false
 
@@ -1217,8 +1217,8 @@ packages:
       mimic-function: 5.0.1
     dev: false
 
-  /p-timeout@6.1.2:
-    resolution: {integrity: sha512-UbD77BuZ9Bc9aABo74gfXhNvzC9Tx7SxtHSh1fxvx3jTLLYvmVhiQZZrJzqqU0jKbN32kb5VOKiLEQI/3bIjgQ==}
+  /p-timeout@6.1.4:
+    resolution: {integrity: sha512-MyIV3ZA/PmyBN/ud8vV9XzwTrNtR4jFrObymZYnZqMmW0zA8Z17vnT0rBgFE/TlohB+YCHqXMgZzb3Csp49vqg==}
     engines: {node: '>=14.16'}
     dev: false
 
@@ -1238,7 +1238,7 @@ packages:
     resolution: {integrity: sha512-lwx6u1CotQYPVju77R+D0vFomni/AqRfqLmqQ8hekklqZ6gAY9rONh7lBQ0uxWMkC2AuX9b2DVAl8To0NyP1JA==}
     engines: {node: '>=12'}
     dependencies:
-      p-timeout: 6.1.2
+      p-timeout: 6.1.4
     dev: false
 
   /p-waterfall@3.0.0:
@@ -1248,8 +1248,8 @@ packages:
       p-reduce: 3.0.0
     dev: false
 
-  /p-whilst@3.1.0:
-    resolution: {integrity: sha512-GA8P2NTp45JQ4gw6w9J4bb6LSpLw+rItJTXzDjJxw4G7rzS2CiQZijZKV64YYrn5vkRE0Q307Q8cHWZt07LNDw==}
+  /p-whilst@3.2.0:
+    resolution: {integrity: sha512-eqUz0XGVIwDDP2XZ2wg2nmi2a6pH3XJeub0z9l31OVnXCkyF+shVRe6qp8dJ85w7T5qJrfmIKAGbcdruDQQxMw==}
     engines: {node: '>=12'}
     dev: false
 
