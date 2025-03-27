@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "A collection of useful promise utilities",
   "type": "module",
-  "packageManager": "pnpm@8.15.6",
+  "packageManager": "pnpm@10.3.0",
   "engines": {
     "node": ">=18.0.0"
   },
@@ -78,7 +78,7 @@
     "p-map": "^7.0.3",
     "p-map-series": "^3.0.0",
     "p-memoize": "^7.1.1",
-    "p-min-delay": "^4.0.2",
+    "p-min-delay": "^4.1.0",
     "p-mutex": "^0.1.0",
     "p-pipe": "^4.0.0",
     "p-progress": "^1.0.0",
