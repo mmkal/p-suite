@@ -38,7 +38,7 @@ Note that that you need to use `.default` explicitly - there's no mapping of def
 
 If you're not sure which promise module you want to use yet, or you want to use a combination of them, you can get them all from a single install. However, it's very unlikely that you'll need them all, so if you are concerned about the size of your node_modules, you should install the individual packages.
 
-For browser usage, or if bundle size is a concern for any other reason, you should be able to use the individual exports (for example `import pMemoize from 'p-suite/p-memoize'`) without negatively impacting your bundle size. But make sure to test this using a bundle analyzer if you're concerned.
+For browser usage, or if bundle size is a concern for any other reason, you can use the individual exports (for example `import pMemoize from 'p-suite/p-memoize'`) without negatively impacting your bundle size.
 
 ## Packages
 
