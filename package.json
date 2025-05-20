@@ -55,7 +55,7 @@
   },
   "dependencies": {
     "delay": "^6.0.0",
-    "make-synchronous": "^1.0.0",
+    "make-synchronous": "^2.0.0",
     "p-all": "^5.0.0",
     "p-any": "^4.0.0",
     "p-break": "^2.0.0",
