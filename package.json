@@ -55,6 +55,7 @@
   },
   "dependencies": {
     "delay": "^6.0.0",
+    "expiry-map": "^2.0.0",
     "make-synchronous": "^2.0.1",
     "p-all": "^5.0.0",
     "p-any": "^4.0.0",
@@ -102,6 +103,7 @@
     "p-waterfall": "^3.0.0",
     "p-whilst": "^3.2.0",
     "pify": "^6.1.0",
+    "stale-while-revalidate-cache": "^3.4.0",
     "yoctodelay": "^2.0.0"
   },
   "exports": {
@@ -280,6 +282,14 @@
     "./make-synchronous": {
       "types": "./source/make-synchronous.d.ts",
       "default": "./source/make-synchronous.js"
+    },
+    "./expiry-map": {
+      "types": "./source/expiry-map.d.ts",
+      "default": "./source/expiry-map.js"
+    },
+    "./stale-while-revalidate-cache": {
+      "types": "./source/stale-while-revalidate-cache.d.ts",
+      "default": "./source/stale-while-revalidate-cache.js"
     },
     "./p-catch-if": {
       "types": "./source/p-catch-if.d.ts",

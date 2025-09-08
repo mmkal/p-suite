@@ -10,11 +10,19 @@ const generate = async () => {
     const cwd = process.cwd()
     const readme = fs.readFileSync(path.join(cwd, 'readme.md'), 'utf8');
 
-    const packages = readme.split('\n')
+    const packageNames = readme.split('\n')
         .flatMap(line => {
             if (!line.startsWith('- **')) return []
             return [line.split('[')[1].split(']')[0]]
         })
+    for (const name of packageNames) {
+        try {
+            (import.meta.resolve(name))
+        } catch {
+            await execa('pnpm', ['install', name])
+        }
+    }
+    const packages = packageNames
         .map(name => {
             const mainModulePath = fileURLToPath(import.meta.resolve(name))
             const mainModuleContent = fs.readFileSync(mainModulePath, 'utf8')

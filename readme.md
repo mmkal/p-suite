@@ -42,8 +42,6 @@ For browser usage, or if bundle size is a concern for any other reason, you can 
 
 ## Packages
 
-*Not accepting additions, but happy to take requests.*
-
 - **[pify](https://github.com/sindresorhus/pify)**: Promisify a callback-style function
 - **[delay](https://github.com/sindresorhus/delay)**: Delay a promise a specified amount of time
 - **[yoctodelay](https://github.com/sindresorhus/yoctodelay)**: Delay a promise a specified amount of time
@@ -88,6 +86,11 @@ For browser usage, or if bundle size is a concern for any other reason, you can 
 - **[p-state](https://github.com/sindresorhus/p-state)**: Inspect the state of a promise
 - **[p-queue](https://github.com/sindresorhus/p-queue)**: Promise queue with concurrency control
 - **[make-synchronous](https://github.com/sindresorhus/make-synchronous)**: Make an asynchronous function synchronous
+
+### Other useful promise-related packages
+
+- **[expiry-map](https://github.com/SamVerschueren/expiry-map)**: A Map implementation with expirable items
+- **[stale-while-revalidate-cache](https://www.npmjs.com/package/stale-while-revalidate-cache)**: a configurable stale-while-revalidate caching strategy for any function
 
 ### `.then`/`.catch`-based packages
 
