@@ -90,7 +90,7 @@ const generate = async () => {
         delete packageJson.readme
     }
 
-    fs.writeFileSync(path.join(cwd, 'package.json'), JSON.stringify(packageJson, null, 2), 'utf8');
+    fs.writeFileSync(path.join(cwd, 'package.json'), JSON.stringify(packageJson, null, 2) + '\n', 'utf8');
 }
 
 await generate();
