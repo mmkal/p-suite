@@ -54,6 +54,7 @@
     "vitest": "^2.1.2"
   },
   "dependencies": {
+    "dataloader": "^2.2.3",
     "delay": "^6.0.0",
     "expiry-map": "^2.0.0",
     "make-synchronous": "^2.0.1",
@@ -290,6 +291,10 @@
     "./stale-while-revalidate-cache": {
       "types": "./source/stale-while-revalidate-cache.d.ts",
       "default": "./source/stale-while-revalidate-cache.js"
+    },
+    "./dataloader": {
+      "types": "./source/dataloader.d.ts",
+      "default": "./source/dataloader.js"
     },
     "./p-catch-if": {
       "types": "./source/p-catch-if.d.ts",

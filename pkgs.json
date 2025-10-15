@@ -1,0 +1,231 @@
+{
+  "sections": [
+    {
+      "title": "## Packages",
+      "subtitle": "",
+      "packages": 
+      [
+        {
+          "name": "pify",
+          "url": "https://github.com/sindresorhus/pify"
+        },
+        {
+          "name": "delay",
+          "url": "https://github.com/sindresorhus/delay"
+        },
+        {
+          "name": "yoctodelay",
+          "url": "https://github.com/sindresorhus/yoctodelay"
+        },
+        {
+          "name": "p-map",
+          "url": "https://github.com/sindresorhus/p-map"
+        },
+        {
+          "name": "p-all",
+          "url": "https://github.com/sindresorhus/p-all"
+        },
+        {
+          "name": "p-event",
+          "url": "https://github.com/sindresorhus/p-event"
+        },
+        {
+          "name": "p-debounce",
+          "url": "https://github.com/sindresorhus/p-debounce"
+        },
+        {
+          "name": "p-throttle",
+          "url": "https://github.com/sindresorhus/p-throttle"
+        },
+        {
+          "name": "p-timeout",
+          "url": "https://github.com/sindresorhus/p-timeout"
+        },
+        {
+          "name": "p-retry",
+          "url": "https://github.com/sindresorhus/p-retry"
+        },
+        {
+          "name": "p-any",
+          "url": "https://github.com/sindresorhus/p-any"
+        },
+        {
+          "name": "p-some",
+          "url": "https://github.com/sindresorhus/p-some"
+        },
+        {
+          "name": "p-mutex",
+          "url": "https://github.com/sindresorhus/p-mutex"
+        },
+        {
+          "name": "p-locate",
+          "url": "https://github.com/sindresorhus/p-locate"
+        },
+        {
+          "name": "p-limit",
+          "url": "https://github.com/sindresorhus/p-limit"
+        },
+        {
+          "name": "p-series",
+          "url": "https://github.com/sindresorhus/p-series"
+        },
+        {
+          "name": "p-memoize",
+          "url": "https://github.com/sindresorhus/p-memoize"
+        },
+        {
+          "name": "p-pipe",
+          "url": "https://github.com/sindresorhus/p-pipe"
+        },
+        {
+          "name": "p-props",
+          "url": "https://github.com/sindresorhus/p-props"
+        },
+        {
+          "name": "p-waterfall",
+          "url": "https://github.com/sindresorhus/p-waterfall"
+        },
+        {
+          "name": "p-cancelable",
+          "url": "https://github.com/sindresorhus/p-cancelable"
+        },
+        {
+          "name": "p-progress",
+          "url": "https://github.com/sindresorhus/p-progress"
+        },
+        {
+          "name": "p-reflect",
+          "url": "https://github.com/sindresorhus/p-reflect"
+        },
+        {
+          "name": "p-filter",
+          "url": "https://github.com/sindresorhus/p-filter"
+        },
+        {
+          "name": "p-reduce",
+          "url": "https://github.com/sindresorhus/p-reduce"
+        },
+        {
+          "name": "p-settle",
+          "url": "https://github.com/sindresorhus/p-settle"
+        },
+        {
+          "name": "p-map-series",
+          "url": "https://github.com/sindresorhus/p-map-series"
+        },
+        {
+          "name": "p-each-series",
+          "url": "https://github.com/sindresorhus/p-each-series"
+        },
+        {
+          "name": "p-times",
+          "url": "https://github.com/sindresorhus/p-times"
+        },
+        {
+          "name": "p-lazy",
+          "url": "https://github.com/sindresorhus/p-lazy"
+        },
+        {
+          "name": "p-whilst",
+          "url": "https://github.com/sindresorhus/p-whilst"
+        },
+        {
+          "name": "p-do-whilst",
+          "url": "https://github.com/sindresorhus/p-do-whilst"
+        },
+        {
+          "name": "p-forever",
+          "url": "https://github.com/sindresorhus/p-forever"
+        },
+        {
+          "name": "p-wait-for",
+          "url": "https://github.com/sindresorhus/p-wait-for"
+        },
+        {
+          "name": "p-min-delay",
+          "url": "https://github.com/sindresorhus/p-min-delay"
+        },
+        {
+          "name": "p-try",
+          "url": "https://github.com/sindresorhus/p-try"
+        },
+        {
+          "name": "p-race",
+          "url": "https://github.com/sindresorhus/p-race"
+        },
+        {
+          "name": "p-immediate",
+          "url": "https://github.com/sindresorhus/p-immediate"
+        },
+        {
+          "name": "p-time",
+          "url": "https://github.com/sindresorhus/p-time"
+        },
+        {
+          "name": "p-defer",
+          "url": "https://github.com/sindresorhus/p-defer"
+        },
+        {
+          "name": "p-is-promise",
+          "url": "https://github.com/sindresorhus/p-is-promise"
+        },
+        {
+          "name": "p-state",
+          "url": "https://github.com/sindresorhus/p-state"
+        },
+        {
+          "name": "p-queue",
+          "url": "https://github.com/sindresorhus/p-queue"
+        },
+        {
+          "name": "make-synchronous",
+          "url": "https://github.com/sindresorhus/make-synchronous"
+        }
+      ]
+    },
+    {
+      "title": "## Other useful promise-related packages",
+      "subtitle": "*Not part of promise-fun but often useful in combination with some of the packages above*",
+      "packages": [
+        {
+          "name": "expiry-map",
+          "url": "https://github.com/SamVerschueren/expiry-map"
+        },
+        {
+          "name": "stale-while-revalidate-cache",
+          "url": "https://www.npmjs.com/package/stale-while-revalidate-cache"
+        },
+        {
+          "name": "dataloader",
+          "url": "https://github.com/graphql/dataloader"
+        }
+      ]
+    },
+    {
+      "title": "## `.then`/`.catch`-based packages",
+      "subtitle": "*You should generally avoid using `.then` except in edge cases*",
+      "packages": [
+        {
+          "name": "p-catch-if",
+          "url": "https://github.com/sindresorhus/p-catch-if"
+        },
+        {
+          "name": "p-if",
+          "url": "https://github.com/sindresorhus/p-if"
+        },
+        {
+          "name": "p-tap",
+          "url": "https://github.com/sindresorhus/p-tap"
+        },
+        {
+          "name": "p-log",
+          "url": "https://github.com/sindresorhus/p-log"
+        },
+        {
+          "name": "p-break",
+          "url": "https://github.com/sindresorhus/p-break"
+        }
+      ]      
+    }
+  ]
+}
