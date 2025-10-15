@@ -19,17 +19,17 @@ npm install p-suite
 ## Usage
 
 ```ts
-import pMemoize from 'p-suite/p-memoize'
+import pMemoize from 'p-suite/p-memoize';
 
-const memoized = pMemoize(myFunction)
+const memoized = pMemoize(myFunction);
 ```
 
 Or you can use the barrel file if you are confident in your tree-shaker:
 
 ```ts
-import {pMemoize} from 'p-suite'
+import {pMemoize} from 'p-suite';
 
-const memoized = pMemoize.default(myFunction)
+const memoized = pMemoize.default(myFunction);
 ```
 
 Note that that you need to use `.default` explicitly - there's no mapping of default to named exports.
@@ -40,39 +40,9 @@ If you're not sure which promise module you want to use yet, or you want to use 
 
 For browser usage, or if bundle size is a concern for any other reason, you can use the individual exports (for example `import pMemoize from 'p-suite/p-memoize'`) without negatively impacting your bundle size.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- begin generated package docs -->
 
-
 ## Packages
-
-
-
-
 
 - [**pify**](#pify): Promisify a callback-style function
 - [**delay**](#delay): Delay a promise a specified amount of time
@@ -121,11 +91,7 @@ For browser usage, or if bundle size is a concern for any other reason, you can 
 
 ## Other useful promise-related packages
 
-
-
-*Not part of promise-fun but often useful in combination with some of the packages above*
-
-
+_Not part of promise-fun but often useful in combination with some of the packages above_
 
 - [**expiry-map**](#expiry-map): A Map implementation with expirable items
 - [**stale-while-revalidate-cache**](#stale-while-revalidate-cache): undefined
@@ -133,11 +99,7 @@ For browser usage, or if bundle size is a concern for any other reason, you can 
 
 ## `.then`/`.catch`-based packages
 
-
-
-*You should generally avoid using `.then` except in edge cases*
-
-
+_You should generally avoid using `.then` except in edge cases_
 
 - [**p-catch-if**](#p-catch-if): Conditional promise catch handler
 - [**p-if**](#p-if): Conditional promise chains
@@ -149,13 +111,7 @@ For browser usage, or if bundle size is a concern for any other reason, you can 
 
 ### pify
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/pify)_
-
-
-
-
 
 > Promisify a callback-style function
 
@@ -216,22 +172,13 @@ const [httpResponse, body] = await pRequest('https://sindresorhus.com');
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/pify)_
 
-
-
-
 ### delay
-
-
 
 _Documenation from [source package](https://github.com/sindresorhus/delay)_
 
-
-
-
-
 > Delay a promise a specified amount of time
 
-*If you target Node.js 16 or later, you can use `import {setTimeout} from 'node:timers/promises'; await setTimeout(1000);` instead. This package can still be useful if you need browser support or the extra features.*
+_If you target Node.js 16 or later, you can use `import {setTimeout} from 'node:timers/promises'; await setTimeout(1000);` instead. This package can still be useful if you need browser support or the extra features._
 
 ##### Install
 
@@ -265,7 +212,9 @@ Create a promise which resolves after a random amount of milliseconds between `m
 Useful for tests and web scraping since they can have unpredictable performance. For example, if you have a test that asserts a method should not take longer than a certain amount of time, and then run it on a CI, it could take longer. So with this method, you could give it a threshold instead.
 
 ##### milliseconds
+
 ##### mininum
+
 ##### maximum
 
 Type: `number`
@@ -294,18 +243,9 @@ console.log(result);
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/delay)_
 
-
-
-
 ### yoctodelay
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/yoctodelay)_
-
-
-
-
 
 > Delay a promise a specified amount of time
 
@@ -358,18 +298,9 @@ The duration to delay the promise.
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/yoctodelay)_
 
-
-
-
 ### p-map
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-map)_
-
-
-
-
 
 > Map over promises concurrently
 
@@ -422,23 +353,14 @@ import {pMapIterable} from 'p-suite/p-map';
 // Multiple posts are fetched concurrently, with limited concurrency and backpressure
 for await (const post of pMapIterable(postIds, getPostMetadata, {concurrency: 8})) {
 	console.log(post);
-};
+}
 ```
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-map)_
 
-
-
-
 ### p-all
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-all)_
-
-
-
-
 
 > Run promise-returning & async functions concurrently with optional limited concurrency
 
@@ -488,7 +410,7 @@ Type: `object`
 
 ##### concurrency
 
-Type: `number` *(Integer)*\
+Type: `number` _(Integer)_\
 Default: `Infinity`\
 Minimum: `1`
 
@@ -496,18 +418,9 @@ Number of concurrently pending promises.
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-all)_
 
-
-
-
 ### p-event
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-event)_
-
-
-
-
 
 > Promisify an event by waiting for it to be emitted
 
@@ -568,18 +481,9 @@ for await (const event of asyncIterator) {
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-event)_
 
-
-
-
 ### p-debounce
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-debounce)_
-
-
-
-
 
 > [Debounce](https://css-tricks.com/debouncing-throttling-explained-examples/) promise-returning & async functions
 
@@ -632,18 +536,9 @@ Type: `object`
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-debounce)_
 
-
-
-
 ### p-throttle
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-throttle)_
-
-
-
-
 
 > Throttle promise-returning & async functions
 
@@ -697,18 +592,9 @@ Returns a throttle function.
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-throttle)_
 
-
-
-
 ### p-timeout
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-timeout)_
-
-
-
-
 
 > Timeout a promise after a specified amount of time
 
@@ -730,7 +616,7 @@ import pTimeout from 'p-suite/p-timeout';
 const delayedPromise = setTimeout(200);
 
 await pTimeout(delayedPromise, {
-	milliseconds: 50,
+	milliseconds: 50
 });
 //=> [TimeoutError: Promise timed out after 50 milliseconds]
 ```
@@ -763,18 +649,9 @@ Passing `Infinity` will cause it to never time out.
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-timeout)_
 
-
-
-
 ### p-retry
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-retry)_
-
-
-
-
 
 > Retry a promise-returning or async function
 
@@ -877,18 +754,9 @@ const result = await pRetry(run, {
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-retry)_
 
-
-
-
 ### p-any
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-any)_
-
-
-
-
 
 > Wait for any promise to be fulfilled
 
@@ -896,7 +764,7 @@ Useful when you need the fastest promise.
 
 You probably want this instead of `Promise.race()`. [Reason.](http://bluebirdjs.com/docs/api/promise.race.html)
 
-*With [Node.js 15](https://medium.com/@nodejs/node-js-v15-0-0-is-here-deb00750f278), there's now a built-in [`Promise#any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/any) method. The benefit of this package is that it has cancellation functionality.*
+_With [Node.js 15](https://medium.com/@nodejs/node-js-v15-0-0-is-here-deb00750f278), there's now a built-in [`Promise#any`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/any) method. The benefit of this package is that it has cancellation functionality._
 
 ##### Install
 
@@ -915,7 +783,7 @@ import got from 'got';
 const first = await pAny([
 	got.head('https://github.com').then(() => 'github'),
 	got.head('https://google.com').then(() => 'google'),
-	got.head('https://twitter.com').then(() => 'twitter'),
+	got.head('https://twitter.com').then(() => 'twitter')
 ]);
 
 console.log(first);
@@ -944,18 +812,9 @@ Receives the value resolved by the promise. Used to filter out values that doesn
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-any)_
 
-
-
-
 ### p-some
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-some)_
-
-
-
-
 
 > Wait for a specified number of promises to be fulfilled
 
@@ -1006,7 +865,7 @@ Type: `object`
 
 ##### count
 
-*Required*\
+_Required_\
 Type: `number`\
 Minimum: `1`
 
@@ -1014,20 +873,11 @@ Number of promises from `input` that have to be fulfilled until the returned pro
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-some)_
 
-
-
-
 ### p-mutex
-
-
 
 _Documenation from [source package](https://github.com/sindresorhus/p-mutex)_
 
-
-
-
-
-> Async [mutex lock](https://en.wikipedia.org/wiki/Lock_(computer_science)) for managing access to a shared resource
+> Async [mutex lock](<https://en.wikipedia.org/wiki/Lock_(computer_science)>) for managing access to a shared resource
 
 It provides a safe and easy way to ensure that only one operation accesses a particular resource at a time, preventing race conditions and ensuring data integrity.
 
@@ -1070,6 +920,7 @@ Automatically manages the lock during the execution of the given `task`.
 It ensures that the mutex is locked before the `task` executes and automatically releases the lock afterward, even if an error occurs during the execution.
 
 Parameters:
+
 - `task`: A function that performs the actions you want to execute while the lock is held. It can be async.
 
 Returns the result of the `task` function.
@@ -1079,18 +930,9 @@ Returns the result of the `task` function.
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-mutex)_
 
-
-
-
 ### p-locate
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-locate)_
-
-
-
-
 
 > Get the first fulfilled promise that satisfies the provided testing function
 
@@ -1122,7 +964,7 @@ console.log(foundPath);
 //=> 'rainbow'
 ```
 
-*The above is just an example. Use [`locate-path`](https://github.com/sindresorhus/locate-path) if you need this.*
+_The above is just an example. Use [`locate-path`](https://github.com/sindresorhus/locate-path) if you need this._
 
 ##### API
 
@@ -1144,22 +986,13 @@ This function will receive resolved values from `input` and is expected to retur
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-locate)_
 
-
-
-
 ### p-limit
-
-
 
 _Documenation from [source package](https://github.com/sindresorhus/p-limit)_
 
-
-
-
-
 > Run multiple promise-returning & async functions with limited concurrency
 
-*Works in Node.js and browsers.*
+_Works in Node.js and browsers._
 
 ##### Install
 
@@ -1174,11 +1007,7 @@ import pLimit from 'p-suite/p-limit';
 
 const limit = pLimit(1);
 
-const input = [
-	limit(() => fetchSomething('foo')),
-	limit(() => fetchSomething('bar')),
-	limit(() => doSomething())
-];
+const input = [limit(() => fetchSomething('foo')), limit(() => fetchSomething('bar')), limit(() => doSomething())];
 
 // Only one promise is run at once
 const result = await Promise.all(input);
@@ -1210,22 +1039,13 @@ Promise-returning/async function.
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-limit)_
 
-
-
-
 ### p-series
-
-
 
 _Documenation from [source package](https://github.com/sindresorhus/p-series)_
 
-
-
-
-
 > Run promise-returning & async functions in series
 
-*Note:* You can just use `await` in a for-loop to get the same behavior. This package was useful before async/await existed.
+_Note:_ You can just use `await` in a for-loop to get the same behavior. This package was useful before async/await existed.
 
 If you're doing the same work in each function, use [`p-each-series`](#p-each-series) instead.
 
@@ -1243,11 +1063,7 @@ $ npm install p-suite
 import pSeries from 'p-suite/p-series';
 import got from 'got';
 
-const tasks = [
-	() => got('https://sindresorhus.com'),
-	() => checkSomething(),
-	() => doSomethingElse()
-];
+const tasks = [() => got('https://sindresorhus.com'), () => checkSomething(), () => doSomethingElse()];
 
 console.log(await pSeries(tasks));
 ```
@@ -1271,18 +1087,9 @@ Functions are expected to return a value. If a Promise is returned, it's awaited
 - [p-each-series](#p-each-series) - Iterate over promises serially
 - [More…](#packages)
 
-
-
-
 ### p-memoize
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-memoize)_
-
-
-
-
 
 > [Memoize](https://en.wikipedia.org/wiki/Memoization) promise-returning & async functions
 
@@ -1290,7 +1097,7 @@ Useful for speeding up consecutive function calls by caching the result of calls
 
 <!-- Please keep this section in sync with https://github.com/sindresorhus/memoize/blob/main/readme.md -->
 
-By default, **only the memoized function's first argument is considered** via strict equality comparison. If you need to cache multiple arguments or cache `object`s *by value*, have a look at alternative [caching strategies](#caching-strategy) below.
+By default, **only the memoized function's first argument is considered** via strict equality comparison. If you need to cache multiple arguments or cache `object`s _by value_, have a look at alternative [caching strategies](#caching-strategy) below.
 
 This package is similar to [memoize](https://github.com/sindresorhus/memoize) but with async-specific enhancements; in particular, it allows for asynchronous caches and does not cache rejected promises.
 
@@ -1336,18 +1143,9 @@ Promise-returning or async function to be memoized.
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-memoize)_
 
-
-
-
 ### p-pipe
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-pipe)_
-
-
-
-
 
 > Compose promise-returning & async functions into a reusable pipeline
 
@@ -1402,18 +1200,9 @@ Expected to return a `Promise` or any value.
 	</sub>
 </div>
 
-
-
-
 ### p-props
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-props)_
-
-
-
-
 
 > Like [`Promise.all()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise/all) but for `Map` and `Object`
 
@@ -1468,18 +1257,9 @@ Resolves entry values that are promises. Other values are passed through.
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-props)_
 
-
-
-
 ### p-waterfall
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-waterfall)_
-
-
-
-
 
 > Run promise-returning & async functions in series, each passing its result to the next
 
@@ -1494,10 +1274,7 @@ $ npm install p-suite
 ```js
 import pWaterfall from 'p-suite/p-waterfall';
 
-const tasks = [
-	initialValue => getEmoji(initialValue),
-	previousValue => `I ❤️ ${previousValue}`
-];
+const tasks = [initialValue => getEmoji(initialValue), previousValue => `I ❤️ ${previousValue}`];
 
 console.log(await pWaterfall(tasks, 'unicorn'));
 //=> 'I ❤️ 🦄'
@@ -1539,24 +1316,15 @@ Value to use as `previousValue` in the first task.
 	</sub>
 </div>
 
-
-
-
 ### p-cancelable
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-cancelable)_
-
-
-
-
 
 > Create a promise that can be canceled
 
 Useful for animation, loading resources, long-running async computations, async iteration, etc.
 
-*If you target [Node.js 16](https://medium.com/@nodejs/node-js-v15-0-0-is-here-deb00750f278) or later, this package is [less useful](https://github.com/sindresorhus/p-cancelable/issues/27) and you should probably use [`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) instead.*
+_If you target [Node.js 16](https://medium.com/@nodejs/node-js-v15-0-0-is-here-deb00750f278) or later, this package is [less useful](https://github.com/sindresorhus/p-cancelable/issues/27) and you should probably use [`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) instead._
 
 ##### Install
 
@@ -1602,18 +1370,9 @@ try {
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-cancelable)_
 
-
-
-
 ### p-progress
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-progress)_
-
-
-
-
 
 > Create a promise that reports progress
 
@@ -1630,15 +1389,16 @@ npm install p-suite
 ```js
 import pProgress from 'p-suite/p-progress';
 
-const runJob = async name => pProgress(async progress => {
-	const job = new Job(name);
+const runJob = async name =>
+	pProgress(async progress => {
+		const job = new Job(name);
 
-	job.on('data', data => {
-		progress(data.length / job.totalSize);
+		job.on('data', data => {
+			progress(data.length / job.totalSize);
+		});
+
+		await job.run();
 	});
-
-	await job.run();
-});
 
 const progressPromise = runJob('Gather rainbows');
 
@@ -1668,18 +1428,9 @@ Same as the [`Promise` constructor](https://developer.mozilla.org/en/docs/Web/Ja
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-progress)_
 
-
-
-
 ### p-reflect
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-reflect)_
-
-
-
-
 
 > Make a promise always fulfill with its actual fulfillment value or rejection reason
 
@@ -1698,11 +1449,7 @@ Here, `Promise.all` would normally fail early because one of the promises reject
 ```js
 import pReflect from 'p-suite/p-reflect';
 
-const promises = [
-	getPromise(),
-	getPromiseThatRejects(),
-	getPromise()
-];
+const promises = [getPromise(), getPromiseThatRejects(), getPromise()];
 
 const results = await Promise.all(promises.map(pReflect));
 
@@ -1743,18 +1490,9 @@ The above is just an example. Use [`p-settle`](#p-settle) if you need exactly th
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-reflect)_
 
-
-
-
 ### p-filter
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-filter)_
-
-
-
-
 
 > Filter promises concurrently
 
@@ -1772,12 +1510,7 @@ npm install p-suite
 import pFilter from 'p-suite/p-filter';
 import getWeather from 'get-weather'; // Not a real module
 
-const places = [
-	getCapital('Norway').then(info => info.name),
-	'Bangkok, Thailand',
-	'Berlin, Germany',
-	'Tokyo, Japan',
-];
+const places = [getCapital('Norway').then(info => info.name), 'Bangkok, Thailand', 'Berlin, Germany', 'Tokyo, Japan'];
 
 const filterer = async place => {
 	const weather = await getWeather(place);
@@ -1810,18 +1543,9 @@ The filterer function that decides whether an element should be included into re
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-filter)_
 
-
-
-
 ### p-reduce
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-reduce)_
-
-
-
-
 
 > Reduce a list of values using promises into a promise for a value
 
@@ -1839,17 +1563,16 @@ $ npm install p-suite
 import pReduce from 'p-suite/p-reduce';
 import humanInfo from 'human-info'; // Not a real module
 
-const names = [
-	getUser('sindresorhus').then(info => info.name),
-	'Addy Osmani',
-	'Pascal Hartig',
-	'Stephen Sawchuk'
-];
+const names = [getUser('sindresorhus').then(info => info.name), 'Addy Osmani', 'Pascal Hartig', 'Stephen Sawchuk'];
 
-const totalAge = await pReduce(names, async (total, name) => {
-	const info = await humanInfo(name);
-	return total + info.age;
-}, 0);
+const totalAge = await pReduce(
+	names,
+	async (total, name) => {
+		const info = await humanInfo(name);
+		return total + info.age;
+	},
+	0
+);
 
 console.log(totalAge);
 //=> 125
@@ -1875,18 +1598,9 @@ Expected to return a value. If a `Promise` is returned, it's awaited before cont
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-reduce)_
 
-
-
-
 ### p-settle
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-settle)_
-
-
-
-
 
 > Settle promises concurrently and get their fulfillment value or rejection reason with optional limited concurrency
 
@@ -1934,10 +1648,12 @@ import pSettle from 'p-suite/p-settle';
 
 const files = ['a.txt', 'b.txt']; // Filenames
 
-console.log(await pSettle(files, {
-	mapper: filename => fs.readFile(filename, 'utf8'),
-	concurrency: 2
-}));
+console.log(
+	await pSettle(files, {
+		mapper: filename => fs.readFile(filename, 'utf8'),
+		concurrency: 2
+	})
+);
 /*
 [
 	{
@@ -1958,18 +1674,9 @@ console.log(await pSettle(files, {
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-settle)_
 
-
-
-
 ### p-map-series
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-map-series)_
-
-
-
-
 
 > Map over promises serially
 
@@ -2021,18 +1728,9 @@ console.log(await pMapSeries(keywords, mapper));
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-map-series)_
 
-
-
-
 ### p-each-series
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-each-series)_
-
-
-
-
 
 > Iterate over promises serially
 
@@ -2101,18 +1799,9 @@ console.log(result);
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-each-series)_
 
-
-
-
 ### p-times
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-times)_
-
-
-
-
 
 > Run promise-returning & async functions a specific number of times concurrently
 
@@ -2165,18 +1854,9 @@ Number of concurrently pending promises returned by `mapper`.
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-times)_
 
-
-
-
 ### p-lazy
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-lazy)_
-
-
-
-
 
 > Create a lazy promise that defers execution until it's awaited or when `.then()`, or `.catch()`, or `.finally()` is called
 
@@ -2231,18 +1911,9 @@ Create a `PLazy` promise that is rejected with the given `reason`.
 - [define-lazy-prop](https://github.com/sindresorhus/define-lazy-prop) - Define a lazily evaluated property on an object
 - [More…](#packages)
 
-
-
-
 ### p-whilst
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-whilst)_
-
-
-
-
 
 > While a condition returns true, calls a function repeatedly, and then resolves the promise
 
@@ -2294,18 +1965,9 @@ You can return a promise and it will be handled.
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-whilst)_
 
-
-
-
 ### p-do-whilst
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-do-whilst)_
-
-
-
-
 
 > Calls a function repeatedly while a condition returns true and then resolves the promise
 
@@ -2358,18 +2020,9 @@ Executes `action` repeatedly while `condition` returns `true` and then resolves 
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-do-whilst)_
 
-
-
-
 ### p-forever
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-forever)_
-
-
-
-
 
 > Run promise-returning & async functions until you end it
 
@@ -2419,23 +2072,13 @@ pForever(async () => {
 });
 ```
 
-
 ##### API
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-forever)_
 
-
-
-
 ### p-wait-for
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-wait-for)_
-
-
-
-
 
 > Wait for a condition to be true
 
@@ -2505,18 +2148,9 @@ console.log('Yay! The file now exists.');
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-wait-for)_
 
-
-
-
 ### p-min-delay
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-min-delay)_
-
-
-
-
 
 > Delay a promise a minimum amount of time
 
@@ -2570,18 +2204,9 @@ Time in milliseconds.
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-min-delay)_
 
-
-
-
 ### p-try
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-try)_
-
-
-
-
 
 > Start a promise chain
 
@@ -2614,7 +2239,7 @@ try {
 
 Returns a `Promise` resolved with the value of calling `fn(...arguments)`. If the function throws an error, the returned `Promise` will be rejected with that error.
 
-Support for passing arguments on to the `fn` is provided in order to be able to avoid creating unnecessary closures. You probably don't need this optimization unless you're pushing a *lot* of functions.
+Support for passing arguments on to the `fn` is provided in order to be able to avoid creating unnecessary closures. You probably don't need this optimization unless you're pushing a _lot_ of functions.
 
 ##### fn
 
@@ -2640,22 +2265,14 @@ Arguments to pass to `fn`.
 	</sub>
 </div>
 
-
-
-
 ### p-race
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-race)_
-
-
-
-
 
 > A better [`Promise.race()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise/race)
 
 Improvements:
+
 - Fixes the [silly behavior](https://github.com/domenic/promises-unwrapping/issues/75) of `Promise.race()` returning a forever pending promise when supplied an empty iterable, which could create some really hard to debug problems. `Promise.race()` returns the first promise to fulfill or reject. Check out [`p-any`](#p-any) if you like to get the first promise to fulfill.
 - Supports aborting promises using [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal).
 
@@ -2695,32 +2312,20 @@ Type: [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSign
 
 You can pass the `signal` to each iterable's element to abort remaining promises when resolve the first promise.
 
-*Requires Node.js 16 or later.*
+_Requires Node.js 16 or later._
 
 ```js
 import pRace from 'p-suite/p-race';
 
-pRace(signal => [
-	fetch('/api', {signal}),
-	setTimeout(10, {signal}),
-]);
+pRace(signal => [fetch('/api', {signal}), setTimeout(10, {signal})]);
 // Remaining promises other than first one will be aborted.
 ```
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-race)_
 
-
-
-
 ### p-immediate
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-immediate)_
-
-
-
-
 
 > Returns a promise resolved in the next event loop - think [`setImmediate()`](https://nodejs.org/api/timers.html#timers_setimmediate_callback_arg)
 
@@ -2750,18 +2355,9 @@ console.log('🦄');
 - [p-timeout](#p-timeout) - Timeout a promise after a specified amount of time
 - [More…](#packages)
 
-
-
-
 ### p-time
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-time)_
-
-
-
-
 
 > Measure the time a promise takes to resolve
 
@@ -2805,18 +2401,9 @@ Promise-returning/async function.
 - [p-log](#p-log) - Log the value/error of a promise
 - [More…](#packages)
 
-
-
-
 ### p-defer
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-defer)_
-
-
-
-
 
 > Create a deferred promise
 
@@ -2843,7 +2430,7 @@ console.log(await delay(100));
 //=> '🦄'
 ```
 
-*The above is just an example. Use [`delay`](#delay) if you need to delay a promise.*
+_The above is just an example. Use [`delay`](#delay) if you need to delay a promise._
 
 ##### API
 
@@ -2856,18 +2443,9 @@ Returns an `object` with a `promise` property and functions to `resolve()` and `
 - [p-lazy](#p-lazy) - Create a lazy promise that defers execution until `.then()` or `.catch()` is called
 - [More…](#packages)
 
-
-
-
 ### p-is-promise
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-is-promise)_
-
-
-
-
 
 > Check if something is a promise
 
@@ -2916,18 +2494,9 @@ isPromise('🦄');
 	</sub>
 </div>
 
-
-
-
 ### p-state
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-state)_
-
-
-
-
 
 > Inspect the state of a promise
 
@@ -2985,18 +2554,9 @@ console.log(await promiseStateAsync(timeoutPromise));
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-state)_
 
-
-
-
 ### p-queue
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-queue)_
-
-
-
-
 
 > Promise queue with concurrency control
 
@@ -3065,18 +2625,9 @@ const queue = new PQueue({concurrency: 1});
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-queue)_
 
-
-
-
 ### make-synchronous
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/make-synchronous)_
-
-
-
-
 
 > Make an asynchronous function synchronous
 
@@ -3135,18 +2686,9 @@ Uses [`MessagePort#postMessage()`](https://nodejs.org/api/worker_threads.html#po
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/make-synchronous)_
 
-
-
-
 ### expiry-map
 
-
-
 _Documenation from [source package](https://github.com/SamVerschueren/expiry-map)_
-
-
-
-
 
 ![CI](https://github.com/SamVerschueren/expiry-map/workflows/CI/badge.svg) [![codedov](https://codecov.io/gh/SamVerschueren/expiry-map/branch/master/graph/badge.svg)](https://codecov.io/gh/SamVerschueren/expiry-map)
 
@@ -3154,13 +2696,11 @@ _Documenation from [source package](https://github.com/SamVerschueren/expiry-map
 
 Memory is automatically released when an item expires by removing it from the `Map`.
 
-
 ##### Install
 
 ```
 $ npm install p-suite
 ```
-
 
 ##### Usage
 
@@ -3187,7 +2727,6 @@ console.log(map.size);
 //=> 0
 ```
 
-
 ##### API
 
 ##### ExpiryMap(maxAge, [iterable])
@@ -3200,18 +2739,9 @@ Milliseconds until an item in the `Map` expires.
 
 _see the rest of the docs in the [source package](https://github.com/SamVerschueren/expiry-map)_
 
-
-
-
 ### stale-while-revalidate-cache
 
-
-
 _Documenation from [source package](https://www.npmjs.com/package/stale-while-revalidate-cache)_
-
-
-
-
 
 # Stale While Revalidate Cache
 
@@ -3239,67 +2769,58 @@ Invoking this `swr` function returns a [Promise](https://developer.mozilla.org/e
 
 ```typescript
 type ResponseObject = {
-  /* The value is inferred from the async function passed to swr */
-  value: ReturnType<typeof yourAsyncFunction>
-  /**
-   * Indicates the cache status of the returned value:
-   *
-   * `fresh`: returned from cache without revalidating, ie. `cachedTime` < `minTimeToStale`
-   * `stale`: returned from cache but revalidation running in background, ie. `minTimeToStale` < `cachedTime` < `maxTimeToLive`
-   * `expired`: not returned from cache but fetched fresh from async function invocation, ie. `cachedTime` > `maxTimeToLive`
-   * `miss`: no previous cache entry existed so waiting for response from async function before returning value
-   */
-  status: 'fresh' | 'stale' | 'expired' | 'miss'
-  /* `minTimeToStale` config value used (see configuration below) */
-  minTimeToStale: number
-  /* `maxTimeToLive` config value used (see configuration below) */
-  maxTimeToLive: number
-  /* Timestamp when function was invoked */
-  now: number
-  /* Timestamp when value was cached */
-  cachedAt: number
-  /* Timestamp when cache value will be stale */
-  staleAt: number
-  /* Timestamp when cache value will expire */
-  expireAt: number
-}
+	/* The value is inferred from the async function passed to swr */
+	value: ReturnType<typeof yourAsyncFunction>;
+	/**
+	 * Indicates the cache status of the returned value:
+	 *
+	 * `fresh`: returned from cache without revalidating, ie. `cachedTime` < `minTimeToStale`
+	 * `stale`: returned from cache but revalidation running in background, ie. `minTimeToStale` < `cachedTime` < `maxTimeToLive`
+	 * `expired`: not returned from cache but fetched fresh from async function invocation, ie. `cachedTime` > `maxTimeToLive`
+	 * `miss`: no previous cache entry existed so waiting for response from async function before returning value
+	 */
+	status: 'fresh' | 'stale' | 'expired' | 'miss';
+	/* `minTimeToStale` config value used (see configuration below) */
+	minTimeToStale: number;
+	/* `maxTimeToLive` config value used (see configuration below) */
+	maxTimeToLive: number;
+	/* Timestamp when function was invoked */
+	now: number;
+	/* Timestamp when value was cached */
+	cachedAt: number;
+	/* Timestamp when cache value will be stale */
+	staleAt: number;
+	/* Timestamp when cache value will expire */
+	expireAt: number;
+};
 ```
 
 The cache helper (`swr`) is also a fully functional event emitter, but more about that later.
 
 ```typescript
-import { createStaleWhileRevalidateCache } from 'p-suite/stale-while-revalidate-cache'
+import {createStaleWhileRevalidateCache} from 'p-suite/stale-while-revalidate-cache';
 
 const swr = createStaleWhileRevalidateCache({
-  storage: window.localStorage,
-})
+	storage: window.localStorage
+});
 
-const cacheKey = 'a-cache-key'
+const cacheKey = 'a-cache-key';
 
-const result = await swr(cacheKey, async () => 'some-return-value')
+const result = await swr(cacheKey, async () => 'some-return-value');
 // result.value: 'some-return-value'
 
-const result2 = await swr(cacheKey, async () => 'some-other-return-value')
+const result2 = await swr(cacheKey, async () => 'some-other-return-value');
 // result2.value: 'some-return-value' <- returned from cache while revalidating to new value for next invocation
 
-const result3 = await swr(cacheKey, async () => 'yet-another-return-value')
+const result3 = await swr(cacheKey, async () => 'yet-another-return-value');
 // result3.value: 'some-other-return-value' <- previous value (assuming it was already revalidated and cached by now)
 ```
 
 _see the rest of the docs in the [source package](https://www.npmjs.com/package/stale-while-revalidate-cache)_
 
-
-
-
 ### dataloader
 
-
-
 _Documenation from [source package](https://github.com/graphql/dataloader)_
-
-
-
-
 
 # DataLoader
 
@@ -3390,18 +2911,9 @@ minimal outgoing data requests.
 
 _see the rest of the docs in the [source package](https://github.com/graphql/dataloader)_
 
-
-
-
 ### p-catch-if
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-catch-if)_
-
-
-
-
 
 > Conditional promise catch handler
 
@@ -3456,18 +2968,9 @@ If the function returns a promise, it's awaited.
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-catch-if)_
 
-
-
-
 ### p-if
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-if)_
-
-
-
-
 
 > Conditional promise chains
 
@@ -3501,7 +3004,6 @@ getList()
 	});
 ```
 
-
 ##### API
 
 ##### pIf(condition, doIf, doElse?)
@@ -3520,18 +3022,9 @@ Can be a `boolean`, or a `Function` returning a `boolean` or a `Promise` for a `
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-if)_
 
-
-
-
 ### p-tap
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-tap)_
-
-
-
-
 
 > Tap into a promise chain without affecting its value or state
 
@@ -3588,18 +3081,9 @@ Returns a [thunk](https://en.wikipedia.org/wiki/Thunk) that returns a `Promise`.
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-tap)_
 
-
-
-
 ### p-log
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-log)_
-
-
-
-
 
 > Log the value/error of a promise
 
@@ -3657,18 +3141,9 @@ The logger to use. Any return value or exception is ignored.
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-log)_
 
-
-
-
 ### p-break
 
-
-
 _Documenation from [source package](https://github.com/sindresorhus/p-break)_
-
-
-
-
 
 > Break out of a promise chain
 
@@ -3696,7 +3171,7 @@ alwaysRun1()
 	.then(() => onlyRunConditional4())
 	.catch(pBreak.end)
 	.then(console.log);
-	//=> '🦄'
+//=> '🦄'
 ```
 
 ##### API
@@ -3717,10 +3192,6 @@ Ends the break. Make sure not to have any other `.catch()` handlers between `pBr
 
 - [p-if](#p-if) - Conditional promise chains
 - [More…](#packages)
-
-
-
-
 
 <!-- end generated package docs -->
 
@@ -3757,7 +3228,7 @@ No. It's a fork of the [promise-fun](https://github.com/sindresorhus/promise-fun
 
 ### When is p-suite updated and published?
 
-There is a scheduled GitHub Actions workflow that will update p-suite with the latest versions of all its dependencies, once per day. Publishing is *not* automated, however, so major version updates will be made ad-hoc. In general, there will likely be a major version update whenever at least one of the dependency packages is updated.
+There is a scheduled GitHub Actions workflow that will update p-suite with the latest versions of all its dependencies, once per day. Publishing is _not_ automated, however, so major version updates will be made ad-hoc. In general, there will likely be a major version update whenever at least one of the dependency packages is updated.
 
 [pkg.pr.new](https://pkg.pr.new) is enabled on the repository, so you can try a prerelease version even without an npm publish of p-suite by looking at the checks for the default branch.
 
@@ -3771,21 +3242,21 @@ Implementation (what this fork adds to sindresorhus's original repo):
 
 - adds a package.json (named `p-suite` rather than `promise-fun` since that npm package name is taken on npm)
 - add a `generate.js` script which:
-   - parses the readme to get all the packages that should be included
-   - installs the latest versions of all packages 
-   - creates `.js` and `.d.ts` files for each package (e.g. `export * from 'p-memoize'`)
-   - creates a barrel file re-exporting all the packages (e.g. `export * as pMemoize from 'p-memoize'`)
-   - adds an `exports` definition pointing to each re-export file
-   - calculates an `engines.node` range that satisfies all the sub-packages*
+  - parses the readme to get all the packages that should be included
+  - installs the latest versions of all packages
+  - creates `.js` and `.d.ts` files for each package (e.g. `export * from 'p-memoize'`)
+  - creates a barrel file re-exporting all the packages (e.g. `export * as pMemoize from 'p-memoize'`)
+  - adds an `exports` definition pointing to each re-export file
+  - calculates an `engines.node` range that satisfies all the sub-packages\*
 - add tests (right now, just making sure an example module works at runtime and typescript-compile time)
 - add CI:
-   - run the generate script to make sure everything's up to date
-   - use autofix.ci to push an update if not
-   - run some tests (right now, just makes sure that types + runtime were generated properly for p-memoize)
-   - use pkg.pr.new to publish a prerelease version (so you can try this out right now: `npm install https://pkg.pr.new/mmkal/p-suite@8c181db` - [link](https://github.com/mmkal/p-suite/runs/31040343982))
+  - run the generate script to make sure everything's up to date
+  - use autofix.ci to push an update if not
+  - run some tests (right now, just makes sure that types + runtime were generated properly for p-memoize)
+  - use pkg.pr.new to publish a prerelease version (so you can try this out right now: `npm install https://pkg.pr.new/mmkal/p-suite@8c181db` - [link](https://github.com/mmkal/p-suite/runs/31040343982))
 
 The idea is that everything should be fully automated, so maintenance should be as simple as `git pull && pnpm install && pnpm generate`.
 
 ---
 
-*note: the algorithm to detect the minimum required node version depends on the `semver` package's various helpers. It isn't bullet-proof, but from debugging manually it seems good enough. This unfortunately isn't part of semver: https://github.com/npm/node-semver/issues/527. If it breaks down in future it will show up in the generated package.json though.
+\*note: the algorithm to detect the minimum required node version depends on the `semver` package's various helpers. It isn't bullet-proof, but from debugging manually it seems good enough. This unfortunately isn't part of semver: https://github.com/npm/node-semver/issues/527. If it breaks down in future it will show up in the generated package.json though.

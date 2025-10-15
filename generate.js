@@ -1,4 +1,4 @@
-
+import * as prettier from "prettier";
 import * as fs from 'fs'
 import * as path from 'path'
 import {execa} from 'execa'
@@ -8,7 +8,8 @@ import * as semver from 'semver'
 
 const generate = async () => {
     const cwd = process.cwd()
-    const readme = fs.readFileSync(path.join(cwd, 'readme.md'), 'utf8');
+    const rootMarkdownFilepath = path.join(cwd, 'readme.md')
+    const readme = fs.readFileSync(rootMarkdownFilepath, 'utf8');
 
     const beginGeneratedPackageDocsMarker = '<!-- begin generated package docs -->'
     const endGeneratedPackageDocsMarker = '<!-- end generated package docs -->'
@@ -107,16 +108,27 @@ const generate = async () => {
             `[More…](#packages)`,
         )
 
-    const updatedReadme = [
+    let updatedReadme = [
         readme.slice(0, beginIndex),
         beginGeneratedPackageDocsMarker,
         '\n',
         newGeneratedReadmeSection,
         '\n',
         readme.slice(endIndex),
-    ]
+    ].join('\n')
+    updatedReadme = await prettier.format(updatedReadme, {
+        filepath: rootMarkdownFilepath,
+        // try to match sindresorhus's style as closely as possible
+        semi: true,
+        singleQuote: true,
+        useTabs: true,
+        bracketSpacing: false,
+        printWidth: 120,
+        trailingComma: 'none',
+        arrowParens: 'avoid',
+    })
 
-    fs.writeFileSync(path.join(cwd, 'readme.md'), updatedReadme.join('\n'), 'utf8')
+    fs.writeFileSync(rootMarkdownFilepath, updatedReadme, 'utf8')
         
     await execa('pnpm', ['install', ...packages.map(p => `${p.package}@latest`)]);
 
