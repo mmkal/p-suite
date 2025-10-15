@@ -293,10 +293,6 @@
       "types": "./source/stale-while-revalidate-cache.d.ts",
       "default": "./source/stale-while-revalidate-cache.js"
     },
-    "./dataloader": {
-      "types": "./source/dataloader.d.ts",
-      "default": "./source/dataloader.js"
-    },
     "./p-catch-if": {
       "types": "./source/p-catch-if.d.ts",
       "default": "./source/p-catch-if.js"
