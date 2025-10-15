@@ -58,12 +58,22 @@ For browser usage, or if bundle size is a concern for any other reason, you can 
 
 
 
+
+
+
+
+
+
 <!-- begin generated package docs -->
 
 
-## Packages,
+## Packages
 
-,- [**pify**](#pify): Promisify a callback-style function
+
+
+
+
+- [**pify**](#pify): Promisify a callback-style function
 - [**delay**](#delay): Delay a promise a specified amount of time
 - [**yoctodelay**](#yoctodelay): Delay a promise a specified amount of time
 - [**p-map**](#p-map): Map over promises concurrently
@@ -108,19 +118,27 @@ For browser usage, or if bundle size is a concern for any other reason, you can 
 - [**p-queue**](#p-queue): Promise queue with concurrency control
 - [**make-synchronous**](#make-synchronous): Make an asynchronous function synchronous
 
-## Other useful promise-related packages,
+## Other useful promise-related packages
+
+
 
 *Not part of promise-fun but often useful in combination with some of the packages above*
 
-,- [**expiry-map**](#expiry-map): A Map implementation with expirable items
+
+
+- [**expiry-map**](#expiry-map): A Map implementation with expirable items
 - [**stale-while-revalidate-cache**](#stale-while-revalidate-cache): undefined
 - [**dataloader**](#dataloader): A data loading utility to reduce requests to a backend via batching and caching.
 
-## `.then`/`.catch`-based packages,
+## `.then`/`.catch`-based packages
+
+
 
 *You should generally avoid using `.then` except in edge cases*
 
-,- [**p-catch-if**](#p-catch-if): Conditional promise catch handler
+
+
+- [**p-catch-if**](#p-catch-if): Conditional promise catch handler
 - [**p-if**](#p-if): Conditional promise chains
 - [**p-tap**](#p-tap): Tap into a promise chain without affecting its value or state
 - [**p-log**](#p-log): Log the value/error of a promise
@@ -132,7 +150,7 @@ For browser usage, or if bundle size is a concern for any other reason, you can 
 
 
 
-_Documenation from [source package](#pify)_
+_Documenation from [source package](https://github.com/sindresorhus/pify)_
 
 
 
@@ -195,7 +213,7 @@ const pRequest = pify(request, {multiArgs: true});
 const [httpResponse, body] = await pRequest('https://sindresorhus.com');
 ```
 
-_see the rest of the docs in the [source package](#pify)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/pify)_
 
 
 
@@ -204,7 +222,7 @@ _see the rest of the docs in the [source package](#pify)_
 
 
 
-_Documenation from [source package](#delay)_
+_Documenation from [source package](https://github.com/sindresorhus/delay)_
 
 
 
@@ -273,7 +291,7 @@ console.log(result);
 //=> '🦄'
 ```
 
-_see the rest of the docs in the [source package](#delay)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/delay)_
 
 
 
@@ -282,7 +300,7 @@ _see the rest of the docs in the [source package](#delay)_
 
 
 
-_Documenation from [source package](#yoctodelay)_
+_Documenation from [source package](https://github.com/sindresorhus/yoctodelay)_
 
 
 
@@ -337,7 +355,7 @@ The duration to delay the promise.
 
 [It's the smallest official unit prefix in the metric system.](https://en.wikipedia.org/wiki/Yocto-) Much smaller than nano.
 
-_see the rest of the docs in the [source package](#yoctodelay)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/yoctodelay)_
 
 
 
@@ -346,7 +364,7 @@ _see the rest of the docs in the [source package](#yoctodelay)_
 
 
 
-_Documenation from [source package](#p-map)_
+_Documenation from [source package](https://github.com/sindresorhus/p-map)_
 
 
 
@@ -406,7 +424,7 @@ for await (const post of pMapIterable(postIds, getPostMetadata, {concurrency: 8}
 };
 ```
 
-_see the rest of the docs in the [source package](#p-map)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-map)_
 
 
 
@@ -415,7 +433,7 @@ _see the rest of the docs in the [source package](#p-map)_
 
 
 
-_Documenation from [source package](#p-all)_
+_Documenation from [source package](https://github.com/sindresorhus/p-all)_
 
 
 
@@ -475,7 +493,7 @@ Minimum: `1`
 
 Number of concurrently pending promises.
 
-_see the rest of the docs in the [source package](#p-all)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-all)_
 
 
 
@@ -484,7 +502,7 @@ _see the rest of the docs in the [source package](#p-all)_
 
 
 
-_Documenation from [source package](#p-event)_
+_Documenation from [source package](https://github.com/sindresorhus/p-event)_
 
 
 
@@ -547,7 +565,7 @@ for await (const event of asyncIterator) {
 }
 ```
 
-_see the rest of the docs in the [source package](#p-event)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-event)_
 
 
 
@@ -556,7 +574,7 @@ _see the rest of the docs in the [source package](#p-event)_
 
 
 
-_Documenation from [source package](#p-debounce)_
+_Documenation from [source package](https://github.com/sindresorhus/p-debounce)_
 
 
 
@@ -611,7 +629,7 @@ Milliseconds to wait before calling `fn`.
 
 Type: `object`
 
-_see the rest of the docs in the [source package](#p-debounce)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-debounce)_
 
 
 
@@ -620,7 +638,7 @@ _see the rest of the docs in the [source package](#p-debounce)_
 
 
 
-_Documenation from [source package](#p-throttle)_
+_Documenation from [source package](https://github.com/sindresorhus/p-throttle)_
 
 
 
@@ -676,7 +694,7 @@ for (let index = 1; index <= 6; index++) {
 
 Returns a throttle function.
 
-_see the rest of the docs in the [source package](#p-throttle)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-throttle)_
 
 
 
@@ -685,7 +703,7 @@ _see the rest of the docs in the [source package](#p-throttle)_
 
 
 
-_Documenation from [source package](#p-timeout)_
+_Documenation from [source package](https://github.com/sindresorhus/p-timeout)_
 
 
 
@@ -742,7 +760,7 @@ Milliseconds before timing out.
 
 Passing `Infinity` will cause it to never time out.
 
-_see the rest of the docs in the [source package](#p-timeout)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-timeout)_
 
 
 
@@ -751,7 +769,7 @@ _see the rest of the docs in the [source package](#p-timeout)_
 
 
 
-_Documenation from [source package](#p-retry)_
+_Documenation from [source package](https://github.com/sindresorhus/p-retry)_
 
 
 
@@ -856,7 +874,7 @@ const result = await pRetry(run, {
 });
 ```
 
-_see the rest of the docs in the [source package](#p-retry)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-retry)_
 
 
 
@@ -865,7 +883,7 @@ _see the rest of the docs in the [source package](#p-retry)_
 
 
 
-_Documenation from [source package](#p-any)_
+_Documenation from [source package](https://github.com/sindresorhus/p-any)_
 
 
 
@@ -923,7 +941,7 @@ Type: `Function`
 
 Receives the value resolved by the promise. Used to filter out values that doesn't satisfy a condition.
 
-_see the rest of the docs in the [source package](#p-any)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-any)_
 
 
 
@@ -932,7 +950,7 @@ _see the rest of the docs in the [source package](#p-any)_
 
 
 
-_Documenation from [source package](#p-some)_
+_Documenation from [source package](https://github.com/sindresorhus/p-some)_
 
 
 
@@ -993,7 +1011,7 @@ Minimum: `1`
 
 Number of promises from `input` that have to be fulfilled until the returned promise is fulfilled.
 
-_see the rest of the docs in the [source package](#p-some)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-some)_
 
 
 
@@ -1002,7 +1020,7 @@ _see the rest of the docs in the [source package](#p-some)_
 
 
 
-_Documenation from [source package](#p-mutex)_
+_Documenation from [source package](https://github.com/sindresorhus/p-mutex)_
 
 
 
@@ -1058,7 +1076,7 @@ Returns the result of the `task` function.
 > [!TIP]
 > Prefer using this method for most use cases as it handles the complexities of lock management and is less prone to errors. Use the lock and unlock methods directly only when you need more control over the lock management process.
 
-_see the rest of the docs in the [source package](#p-mutex)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-mutex)_
 
 
 
@@ -1067,7 +1085,7 @@ _see the rest of the docs in the [source package](#p-mutex)_
 
 
 
-_Documenation from [source package](#p-locate)_
+_Documenation from [source package](https://github.com/sindresorhus/p-locate)_
 
 
 
@@ -1123,7 +1141,7 @@ Type: `Function`
 
 This function will receive resolved values from `input` and is expected to return a `Promise<boolean>` or `boolean`.
 
-_see the rest of the docs in the [source package](#p-locate)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-locate)_
 
 
 
@@ -1132,7 +1150,7 @@ _see the rest of the docs in the [source package](#p-locate)_
 
 
 
-_Documenation from [source package](#p-limit)_
+_Documenation from [source package](https://github.com/sindresorhus/p-limit)_
 
 
 
@@ -1189,7 +1207,7 @@ Type: `Function`
 
 Promise-returning/async function.
 
-_see the rest of the docs in the [source package](#p-limit)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-limit)_
 
 
 
@@ -1198,7 +1216,7 @@ _see the rest of the docs in the [source package](#p-limit)_
 
 
 
-_Documenation from [source package](#p-series)_
+_Documenation from [source package](https://github.com/sindresorhus/p-series)_
 
 
 
@@ -1259,7 +1277,7 @@ Functions are expected to return a value. If a Promise is returned, it's awaited
 
 
 
-_Documenation from [source package](#p-memoize)_
+_Documenation from [source package](https://github.com/sindresorhus/p-memoize)_
 
 
 
@@ -1315,7 +1333,7 @@ Type: `Function`
 
 Promise-returning or async function to be memoized.
 
-_see the rest of the docs in the [source package](#p-memoize)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-memoize)_
 
 
 
@@ -1324,7 +1342,7 @@ _see the rest of the docs in the [source package](#p-memoize)_
 
 
 
-_Documenation from [source package](#p-pipe)_
+_Documenation from [source package](https://github.com/sindresorhus/p-pipe)_
 
 
 
@@ -1390,7 +1408,7 @@ Expected to return a `Promise` or any value.
 
 
 
-_Documenation from [source package](#p-props)_
+_Documenation from [source package](https://github.com/sindresorhus/p-props)_
 
 
 
@@ -1447,7 +1465,7 @@ Type: `Map | object`
 
 Resolves entry values that are promises. Other values are passed through.
 
-_see the rest of the docs in the [source package](#p-props)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-props)_
 
 
 
@@ -1456,7 +1474,7 @@ _see the rest of the docs in the [source package](#p-props)_
 
 
 
-_Documenation from [source package](#p-waterfall)_
+_Documenation from [source package](https://github.com/sindresorhus/p-waterfall)_
 
 
 
@@ -1527,7 +1545,7 @@ Value to use as `previousValue` in the first task.
 
 
 
-_Documenation from [source package](#p-cancelable)_
+_Documenation from [source package](https://github.com/sindresorhus/p-cancelable)_
 
 
 
@@ -1581,7 +1599,7 @@ try {
 
 ##### API
 
-_see the rest of the docs in the [source package](#p-cancelable)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-cancelable)_
 
 
 
@@ -1590,7 +1608,7 @@ _see the rest of the docs in the [source package](#p-cancelable)_
 
 
 
-_Documenation from [source package](#p-progress)_
+_Documenation from [source package](https://github.com/sindresorhus/p-progress)_
 
 
 
@@ -1647,7 +1665,7 @@ Same as the [`Promise` constructor](https://developer.mozilla.org/en/docs/Web/Ja
 
 `PProgress` is a subclass of `Promise`.
 
-_see the rest of the docs in the [source package](#p-progress)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-progress)_
 
 
 
@@ -1656,7 +1674,7 @@ _see the rest of the docs in the [source package](#p-progress)_
 
 
 
-_Documenation from [source package](#p-reflect)_
+_Documenation from [source package](https://github.com/sindresorhus/p-reflect)_
 
 
 
@@ -1722,7 +1740,7 @@ console.log(resolvedString);
 
 The above is just an example. Use [`p-settle`](#p-settle) if you need exactly that.
 
-_see the rest of the docs in the [source package](#p-reflect)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-reflect)_
 
 
 
@@ -1731,7 +1749,7 @@ _see the rest of the docs in the [source package](#p-reflect)_
 
 
 
-_Documenation from [source package](#p-filter)_
+_Documenation from [source package](https://github.com/sindresorhus/p-filter)_
 
 
 
@@ -1789,7 +1807,7 @@ Type: `Function`
 
 The filterer function that decides whether an element should be included into result. Expected to return `boolean | Promise<boolean>`.
 
-_see the rest of the docs in the [source package](#p-filter)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-filter)_
 
 
 
@@ -1798,7 +1816,7 @@ _see the rest of the docs in the [source package](#p-filter)_
 
 
 
-_Documenation from [source package](#p-reduce)_
+_Documenation from [source package](https://github.com/sindresorhus/p-reduce)_
 
 
 
@@ -1854,7 +1872,7 @@ Type: `Function`
 
 Expected to return a value. If a `Promise` is returned, it's awaited before continuing with the next iteration.
 
-_see the rest of the docs in the [source package](#p-reduce)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-reduce)_
 
 
 
@@ -1863,7 +1881,7 @@ _see the rest of the docs in the [source package](#p-reduce)_
 
 
 
-_Documenation from [source package](#p-settle)_
+_Documenation from [source package](https://github.com/sindresorhus/p-settle)_
 
 
 
@@ -1937,7 +1955,7 @@ console.log(await pSettle(files, {
 */
 ```
 
-_see the rest of the docs in the [source package](#p-settle)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-settle)_
 
 
 
@@ -1946,7 +1964,7 @@ _see the rest of the docs in the [source package](#p-settle)_
 
 
 
-_Documenation from [source package](#p-map-series)_
+_Documenation from [source package](https://github.com/sindresorhus/p-map-series)_
 
 
 
@@ -2000,7 +2018,7 @@ console.log(await pMapSeries(keywords, mapper));
 */
 ```
 
-_see the rest of the docs in the [source package](#p-map-series)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-map-series)_
 
 
 
@@ -2009,7 +2027,7 @@ _see the rest of the docs in the [source package](#p-map-series)_
 
 
 
-_Documenation from [source package](#p-each-series)_
+_Documenation from [source package](https://github.com/sindresorhus/p-each-series)_
 
 
 
@@ -2080,7 +2098,7 @@ console.log(result);
 //=> ['a', 'b', 'c']
 ```
 
-_see the rest of the docs in the [source package](#p-each-series)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-each-series)_
 
 
 
@@ -2089,7 +2107,7 @@ _see the rest of the docs in the [source package](#p-each-series)_
 
 
 
-_Documenation from [source package](#p-times)_
+_Documenation from [source package](https://github.com/sindresorhus/p-times)_
 
 
 
@@ -2144,7 +2162,7 @@ Minimum: `1`
 
 Number of concurrently pending promises returned by `mapper`.
 
-_see the rest of the docs in the [source package](#p-times)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-times)_
 
 
 
@@ -2153,7 +2171,7 @@ _see the rest of the docs in the [source package](#p-times)_
 
 
 
-_Documenation from [source package](#p-lazy)_
+_Documenation from [source package](https://github.com/sindresorhus/p-lazy)_
 
 
 
@@ -2219,7 +2237,7 @@ Create a `PLazy` promise that is rejected with the given `reason`.
 
 
 
-_Documenation from [source package](#p-whilst)_
+_Documenation from [source package](https://github.com/sindresorhus/p-whilst)_
 
 
 
@@ -2273,7 +2291,7 @@ Action to run for each iteration.
 
 You can return a promise and it will be handled.
 
-_see the rest of the docs in the [source package](#p-whilst)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-whilst)_
 
 
 
@@ -2282,7 +2300,7 @@ _see the rest of the docs in the [source package](#p-whilst)_
 
 
 
-_Documenation from [source package](#p-do-whilst)_
+_Documenation from [source package](https://github.com/sindresorhus/p-do-whilst)_
 
 
 
@@ -2337,7 +2355,7 @@ console.log(count);
 
 Executes `action` repeatedly while `condition` returns `true` and then resolves to the result of the last call to `action`. Rejects if `action` returns a promise that rejects or if an error is thrown anywhere.
 
-_see the rest of the docs in the [source package](#p-do-whilst)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-do-whilst)_
 
 
 
@@ -2346,7 +2364,7 @@ _see the rest of the docs in the [source package](#p-do-whilst)_
 
 
 
-_Documenation from [source package](#p-forever)_
+_Documenation from [source package](https://github.com/sindresorhus/p-forever)_
 
 
 
@@ -2403,7 +2421,7 @@ pForever(async () => {
 
 ##### API
 
-_see the rest of the docs in the [source package](#p-forever)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-forever)_
 
 
 
@@ -2412,7 +2430,7 @@ _see the rest of the docs in the [source package](#p-forever)_
 
 
 
-_Documenation from [source package](#p-wait-for)_
+_Documenation from [source package](https://github.com/sindresorhus/p-wait-for)_
 
 
 
@@ -2484,7 +2502,7 @@ await pWaitFor(() => pathExists('unicorn.png'), {
 console.log('Yay! The file now exists.');
 ```
 
-_see the rest of the docs in the [source package](#p-wait-for)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-wait-for)_
 
 
 
@@ -2493,7 +2511,7 @@ _see the rest of the docs in the [source package](#p-wait-for)_
 
 
 
-_Documenation from [source package](#p-min-delay)_
+_Documenation from [source package](https://github.com/sindresorhus/p-min-delay)_
 
 
 
@@ -2549,7 +2567,7 @@ Type: `number`
 
 Time in milliseconds.
 
-_see the rest of the docs in the [source package](#p-min-delay)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-min-delay)_
 
 
 
@@ -2558,7 +2576,7 @@ _see the rest of the docs in the [source package](#p-min-delay)_
 
 
 
-_Documenation from [source package](#p-try)_
+_Documenation from [source package](https://github.com/sindresorhus/p-try)_
 
 
 
@@ -2628,7 +2646,7 @@ Arguments to pass to `fn`.
 
 
 
-_Documenation from [source package](#p-race)_
+_Documenation from [source package](https://github.com/sindresorhus/p-race)_
 
 
 
@@ -2688,7 +2706,7 @@ pRace(signal => [
 // Remaining promises other than first one will be aborted.
 ```
 
-_see the rest of the docs in the [source package](#p-race)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-race)_
 
 
 
@@ -2697,7 +2715,7 @@ _see the rest of the docs in the [source package](#p-race)_
 
 
 
-_Documenation from [source package](#p-immediate)_
+_Documenation from [source package](https://github.com/sindresorhus/p-immediate)_
 
 
 
@@ -2738,7 +2756,7 @@ console.log('🦄');
 
 
 
-_Documenation from [source package](#p-time)_
+_Documenation from [source package](https://github.com/sindresorhus/p-time)_
 
 
 
@@ -2793,7 +2811,7 @@ Promise-returning/async function.
 
 
 
-_Documenation from [source package](#p-defer)_
+_Documenation from [source package](https://github.com/sindresorhus/p-defer)_
 
 
 
@@ -2844,7 +2862,7 @@ Returns an `object` with a `promise` property and functions to `resolve()` and `
 
 
 
-_Documenation from [source package](#p-is-promise)_
+_Documenation from [source package](https://github.com/sindresorhus/p-is-promise)_
 
 
 
@@ -2904,7 +2922,7 @@ isPromise('🦄');
 
 
 
-_Documenation from [source package](#p-state)_
+_Documenation from [source package](https://github.com/sindresorhus/p-state)_
 
 
 
@@ -2964,7 +2982,7 @@ console.log(await promiseStateAsync(timeoutPromise));
 //=> 'fulfilled'
 ```
 
-_see the rest of the docs in the [source package](#p-state)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-state)_
 
 
 
@@ -2973,7 +2991,7 @@ _see the rest of the docs in the [source package](#p-state)_
 
 
 
-_Documenation from [source package](#p-queue)_
+_Documenation from [source package](https://github.com/sindresorhus/p-queue)_
 
 
 
@@ -3044,7 +3062,7 @@ const queue = new PQueue({concurrency: 1});
 })();
 ```
 
-_see the rest of the docs in the [source package](#p-queue)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-queue)_
 
 
 
@@ -3053,7 +3071,7 @@ _see the rest of the docs in the [source package](#p-queue)_
 
 
 
-_Documenation from [source package](#make-synchronous)_
+_Documenation from [source package](https://github.com/sindresorhus/make-synchronous)_
 
 
 
@@ -3114,7 +3132,7 @@ The function is executed in a worker or subprocess, so you cannot access variabl
 
 Uses [`MessagePort#postMessage()`](https://nodejs.org/api/worker_threads.html#portpostmessagevalue-transferlist) or the V8 serialization API to transfer arguments, return values, errors between the worker or subprocess and the current process. Most values are supported — except functions and symbols.
 
-_see the rest of the docs in the [source package](#make-synchronous)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/make-synchronous)_
 
 
 
@@ -3123,7 +3141,7 @@ _see the rest of the docs in the [source package](#make-synchronous)_
 
 
 
-_Documenation from [source package](#expiry-map)_
+_Documenation from [source package](https://github.com/SamVerschueren/expiry-map)_
 
 
 
@@ -3179,7 +3197,7 @@ Type: `number`
 
 Milliseconds until an item in the `Map` expires.
 
-_see the rest of the docs in the [source package](#expiry-map)_
+_see the rest of the docs in the [source package](https://github.com/SamVerschueren/expiry-map)_
 
 
 
@@ -3188,7 +3206,7 @@ _see the rest of the docs in the [source package](#expiry-map)_
 
 
 
-_Documenation from [source package](#stale-while-revalidate-cache)_
+_Documenation from [source package](https://www.npmjs.com/package/stale-while-revalidate-cache)_
 
 
 
@@ -3267,7 +3285,7 @@ const result3 = await swr(cacheKey, async () => 'yet-another-return-value')
 // result3.value: 'some-other-return-value' <- previous value (assuming it was already revalidated and cached by now)
 ```
 
-_see the rest of the docs in the [source package](#stale-while-revalidate-cache)_
+_see the rest of the docs in the [source package](https://www.npmjs.com/package/stale-while-revalidate-cache)_
 
 
 
@@ -3276,7 +3294,7 @@ _see the rest of the docs in the [source package](#stale-while-revalidate-cache)
 
 
 
-_Documenation from [source package](#dataloader)_
+_Documenation from [source package](https://github.com/graphql/dataloader)_
 
 
 
@@ -3369,7 +3387,7 @@ presented to your batch loading function. This allows your application to safely
 distribute data fetching requirements throughout your application and maintain
 minimal outgoing data requests.
 
-_see the rest of the docs in the [source package](#dataloader)_
+_see the rest of the docs in the [source package](https://github.com/graphql/dataloader)_
 
 
 
@@ -3378,7 +3396,7 @@ _see the rest of the docs in the [source package](#dataloader)_
 
 
 
-_Documenation from [source package](#p-catch-if)_
+_Documenation from [source package](https://github.com/sindresorhus/p-catch-if)_
 
 
 
@@ -3435,7 +3453,7 @@ Specify either an error constructor, array of error constructors, boolean, or fu
 
 If the function returns a promise, it's awaited.
 
-_see the rest of the docs in the [source package](#p-catch-if)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-catch-if)_
 
 
 
@@ -3444,7 +3462,7 @@ _see the rest of the docs in the [source package](#p-catch-if)_
 
 
 
-_Documenation from [source package](#p-if)_
+_Documenation from [source package](https://github.com/sindresorhus/p-if)_
 
 
 
@@ -3499,7 +3517,7 @@ Decides whether `doIf` or `doElse` is executed.
 
 Can be a `boolean`, or a `Function` returning a `boolean` or a `Promise` for a `boolean`.
 
-_see the rest of the docs in the [source package](#p-if)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-if)_
 
 
 
@@ -3508,7 +3526,7 @@ _see the rest of the docs in the [source package](#p-if)_
 
 
 
-_Documenation from [source package](#p-tap)_
+_Documenation from [source package](https://github.com/sindresorhus/p-tap)_
 
 
 
@@ -3567,7 +3585,7 @@ Use this in a `.catch()` method.
 
 Returns a [thunk](https://en.wikipedia.org/wiki/Thunk) that returns a `Promise`.
 
-_see the rest of the docs in the [source package](#p-tap)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-tap)_
 
 
 
@@ -3576,7 +3594,7 @@ _see the rest of the docs in the [source package](#p-tap)_
 
 
 
-_Documenation from [source package](#p-log)_
+_Documenation from [source package](https://github.com/sindresorhus/p-log)_
 
 
 
@@ -3636,7 +3654,7 @@ Default: `console.log`
 
 The logger to use. Any return value or exception is ignored.
 
-_see the rest of the docs in the [source package](#p-log)_
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/p-log)_
 
 
 
@@ -3645,7 +3663,7 @@ _see the rest of the docs in the [source package](#p-log)_
 
 
 
-_Documenation from [source package](#p-break)_
+_Documenation from [source package](https://github.com/sindresorhus/p-break)_
 
 
 

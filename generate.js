@@ -65,7 +65,7 @@ const generate = async () => {
                 }
                 return `- [**${p.name}**](#${p.name}): ${details.packageJson.description}`
             }).join('\n')
-        ]),
+        ].join('\n\n')),
         '## Docs',
         ...packages.map(p => {
             const modifiedContent = p.readmeContent
@@ -99,6 +99,7 @@ const generate = async () => {
     for (const p of packages) {
         newGeneratedReadmeSection = newGeneratedReadmeSection
             .replaceAll(`(${p.url})`, `(#${p.name})`)
+            .replaceAll(`[source package](#${p.name})`, `[source package](${p.url})`) // in this case we want to link to the actual url
     }
     newGeneratedReadmeSection = newGeneratedReadmeSection
         .replaceAll(
