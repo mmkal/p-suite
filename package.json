@@ -49,11 +49,13 @@
   "devDependencies": {
     "@types/semver": "^7.5.8",
     "execa": "^9.4.0",
+    "prettier": "3.6.2",
     "read-package-up": "^11.0.0",
     "semver": "^7.6.3",
     "vitest": "^2.1.2"
   },
   "dependencies": {
+    "dataloader": "^2.2.3",
     "delay": "^6.0.0",
     "expiry-map": "^2.0.0",
     "make-synchronous": "^2.0.1",
@@ -73,7 +75,7 @@
     "p-immediate": "^4.0.0",
     "p-is-promise": "^4.0.0",
     "p-lazy": "^5.0.0",
-    "p-limit": "^7.1.1",
+    "p-limit": "^7.2.0",
     "p-locate": "^6.0.0",
     "p-log": "^3.0.0",
     "p-map": "^7.0.3",
