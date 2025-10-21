@@ -110,7 +110,7 @@ _You should generally avoid using `.then` except in edge cases_
 
 ### pify
 
-_Documenation from [source package](https://github.com/sindresorhus/pify)_
+_Documenation from [source package](https://github.com/sindresorhus/pify)_ | _[Back to packages](#packages)_
 
 > Promisify a callback-style function
 
@@ -173,7 +173,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### delay
 
-_Documenation from [source package](https://github.com/sindresorhus/delay)_
+_Documenation from [source package](https://github.com/sindresorhus/delay)_ | _[Back to packages](#packages)_
 
 > Delay a promise a specified amount of time
 
@@ -244,7 +244,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### yoctodelay
 
-_Documenation from [source package](https://github.com/sindresorhus/yoctodelay)_
+_Documenation from [source package](https://github.com/sindresorhus/yoctodelay)_ | _[Back to packages](#packages)_
 
 > Delay a promise a specified amount of time
 
@@ -299,7 +299,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-map
 
-_Documenation from [source package](https://github.com/sindresorhus/p-map)_
+_Documenation from [source package](https://github.com/sindresorhus/p-map)_ | _[Back to packages](#packages)_
 
 > Map over promises concurrently
 
@@ -359,7 +359,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-all
 
-_Documenation from [source package](https://github.com/sindresorhus/p-all)_
+_Documenation from [source package](https://github.com/sindresorhus/p-all)_ | _[Back to packages](#packages)_
 
 > Run promise-returning & async functions concurrently with optional limited concurrency
 
@@ -419,7 +419,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-event
 
-_Documenation from [source package](https://github.com/sindresorhus/p-event)_
+_Documenation from [source package](https://github.com/sindresorhus/p-event)_ | _[Back to packages](#packages)_
 
 > Promisify an event by waiting for it to be emitted
 
@@ -482,7 +482,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-debounce
 
-_Documenation from [source package](https://github.com/sindresorhus/p-debounce)_
+_Documenation from [source package](https://github.com/sindresorhus/p-debounce)_ | _[Back to packages](#packages)_
 
 > [Debounce](https://css-tricks.com/debouncing-throttling-explained-examples/) promise-returning & async functions
 
@@ -537,7 +537,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-throttle
 
-_Documenation from [source package](https://github.com/sindresorhus/p-throttle)_
+_Documenation from [source package](https://github.com/sindresorhus/p-throttle)_ | _[Back to packages](#packages)_
 
 > Throttle promise-returning & async functions
 
@@ -593,7 +593,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-timeout
 
-_Documenation from [source package](https://github.com/sindresorhus/p-timeout)_
+_Documenation from [source package](https://github.com/sindresorhus/p-timeout)_ | _[Back to packages](#packages)_
 
 > Timeout a promise after a specified amount of time
 
@@ -650,7 +650,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-retry
 
-_Documenation from [source package](https://github.com/sindresorhus/p-retry)_
+_Documenation from [source package](https://github.com/sindresorhus/p-retry)_ | _[Back to packages](#packages)_
 
 > Retry a promise-returning or async function
 
@@ -755,7 +755,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-any
 
-_Documenation from [source package](https://github.com/sindresorhus/p-any)_
+_Documenation from [source package](https://github.com/sindresorhus/p-any)_ | _[Back to packages](#packages)_
 
 > Wait for any promise to be fulfilled
 
@@ -813,7 +813,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-some
 
-_Documenation from [source package](https://github.com/sindresorhus/p-some)_
+_Documenation from [source package](https://github.com/sindresorhus/p-some)_ | _[Back to packages](#packages)_
 
 > Wait for a specified number of promises to be fulfilled
 
@@ -874,7 +874,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-mutex
 
-_Documenation from [source package](https://github.com/sindresorhus/p-mutex)_
+_Documenation from [source package](https://github.com/sindresorhus/p-mutex)_ | _[Back to packages](#packages)_
 
 > Async [mutex lock](<https://en.wikipedia.org/wiki/Lock_(computer_science)>) for managing access to a shared resource
 
@@ -931,7 +931,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-locate
 
-_Documenation from [source package](https://github.com/sindresorhus/p-locate)_
+_Documenation from [source package](https://github.com/sindresorhus/p-locate)_ | _[Back to packages](#packages)_
 
 > Get the first fulfilled promise that satisfies the provided testing function
 
@@ -987,7 +987,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-limit
 
-_Documenation from [source package](https://github.com/sindresorhus/p-limit)_
+_Documenation from [source package](https://github.com/sindresorhus/p-limit)_ | _[Back to packages](#packages)_
 
 > Run multiple promise-returning & async functions with limited concurrency
 
@@ -1040,7 +1040,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-series
 
-_Documenation from [source package](https://github.com/sindresorhus/p-series)_
+_Documenation from [source package](https://github.com/sindresorhus/p-series)_ | _[Back to packages](#packages)_
 
 > Run promise-returning & async functions in series
 
@@ -1088,7 +1088,7 @@ Functions are expected to return a value. If a Promise is returned, it's awaited
 
 ### p-memoize
 
-_Documenation from [source package](https://github.com/sindresorhus/p-memoize)_
+_Documenation from [source package](https://github.com/sindresorhus/p-memoize)_ | _[Back to packages](#packages)_
 
 > [Memoize](https://en.wikipedia.org/wiki/Memoization) promise-returning & async functions
 
@@ -1144,7 +1144,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-pipe
 
-_Documenation from [source package](https://github.com/sindresorhus/p-pipe)_
+_Documenation from [source package](https://github.com/sindresorhus/p-pipe)_ | _[Back to packages](#packages)_
 
 > Compose promise-returning & async functions into a reusable pipeline
 
@@ -1201,7 +1201,7 @@ Expected to return a `Promise` or any value.
 
 ### p-props
 
-_Documenation from [source package](https://github.com/sindresorhus/p-props)_
+_Documenation from [source package](https://github.com/sindresorhus/p-props)_ | _[Back to packages](#packages)_
 
 > Like [`Promise.all()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise/all) but for `Map` and `Object`
 
@@ -1258,7 +1258,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-waterfall
 
-_Documenation from [source package](https://github.com/sindresorhus/p-waterfall)_
+_Documenation from [source package](https://github.com/sindresorhus/p-waterfall)_ | _[Back to packages](#packages)_
 
 > Run promise-returning & async functions in series, each passing its result to the next
 
@@ -1317,7 +1317,7 @@ Value to use as `previousValue` in the first task.
 
 ### p-cancelable
 
-_Documenation from [source package](https://github.com/sindresorhus/p-cancelable)_
+_Documenation from [source package](https://github.com/sindresorhus/p-cancelable)_ | _[Back to packages](#packages)_
 
 > Create a promise that can be canceled
 
@@ -1371,7 +1371,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-progress
 
-_Documenation from [source package](https://github.com/sindresorhus/p-progress)_
+_Documenation from [source package](https://github.com/sindresorhus/p-progress)_ | _[Back to packages](#packages)_
 
 > Create a promise that reports progress
 
@@ -1429,7 +1429,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-reflect
 
-_Documenation from [source package](https://github.com/sindresorhus/p-reflect)_
+_Documenation from [source package](https://github.com/sindresorhus/p-reflect)_ | _[Back to packages](#packages)_
 
 > Make a promise always fulfill with its actual fulfillment value or rejection reason
 
@@ -1491,7 +1491,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-filter
 
-_Documenation from [source package](https://github.com/sindresorhus/p-filter)_
+_Documenation from [source package](https://github.com/sindresorhus/p-filter)_ | _[Back to packages](#packages)_
 
 > Filter promises concurrently
 
@@ -1544,7 +1544,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-reduce
 
-_Documenation from [source package](https://github.com/sindresorhus/p-reduce)_
+_Documenation from [source package](https://github.com/sindresorhus/p-reduce)_ | _[Back to packages](#packages)_
 
 > Reduce a list of values using promises into a promise for a value
 
@@ -1599,7 +1599,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-settle
 
-_Documenation from [source package](https://github.com/sindresorhus/p-settle)_
+_Documenation from [source package](https://github.com/sindresorhus/p-settle)_ | _[Back to packages](#packages)_
 
 > Settle promises concurrently and get their fulfillment value or rejection reason with optional limited concurrency
 
@@ -1675,7 +1675,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-map-series
 
-_Documenation from [source package](https://github.com/sindresorhus/p-map-series)_
+_Documenation from [source package](https://github.com/sindresorhus/p-map-series)_ | _[Back to packages](#packages)_
 
 > Map over promises serially
 
@@ -1729,7 +1729,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-each-series
 
-_Documenation from [source package](https://github.com/sindresorhus/p-each-series)_
+_Documenation from [source package](https://github.com/sindresorhus/p-each-series)_ | _[Back to packages](#packages)_
 
 > Iterate over promises serially
 
@@ -1800,7 +1800,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-times
 
-_Documenation from [source package](https://github.com/sindresorhus/p-times)_
+_Documenation from [source package](https://github.com/sindresorhus/p-times)_ | _[Back to packages](#packages)_
 
 > Run promise-returning & async functions a specific number of times concurrently
 
@@ -1855,7 +1855,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-lazy
 
-_Documenation from [source package](https://github.com/sindresorhus/p-lazy)_
+_Documenation from [source package](https://github.com/sindresorhus/p-lazy)_ | _[Back to packages](#packages)_
 
 > Create a lazy promise that defers execution until it's awaited or when `.then()`, or `.catch()`, or `.finally()` is called
 
@@ -1912,7 +1912,7 @@ Create a `PLazy` promise that is rejected with the given `reason`.
 
 ### p-whilst
 
-_Documenation from [source package](https://github.com/sindresorhus/p-whilst)_
+_Documenation from [source package](https://github.com/sindresorhus/p-whilst)_ | _[Back to packages](#packages)_
 
 > While a condition returns true, calls a function repeatedly, and then resolves the promise
 
@@ -1966,7 +1966,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-do-whilst
 
-_Documenation from [source package](https://github.com/sindresorhus/p-do-whilst)_
+_Documenation from [source package](https://github.com/sindresorhus/p-do-whilst)_ | _[Back to packages](#packages)_
 
 > Calls a function repeatedly while a condition returns true and then resolves the promise
 
@@ -2021,7 +2021,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-forever
 
-_Documenation from [source package](https://github.com/sindresorhus/p-forever)_
+_Documenation from [source package](https://github.com/sindresorhus/p-forever)_ | _[Back to packages](#packages)_
 
 > Run promise-returning & async functions until you end it
 
@@ -2077,7 +2077,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-wait-for
 
-_Documenation from [source package](https://github.com/sindresorhus/p-wait-for)_
+_Documenation from [source package](https://github.com/sindresorhus/p-wait-for)_ | _[Back to packages](#packages)_
 
 > Wait for a condition to be true
 
@@ -2149,7 +2149,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-min-delay
 
-_Documenation from [source package](https://github.com/sindresorhus/p-min-delay)_
+_Documenation from [source package](https://github.com/sindresorhus/p-min-delay)_ | _[Back to packages](#packages)_
 
 > Delay a promise a minimum amount of time
 
@@ -2205,7 +2205,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-try
 
-_Documenation from [source package](https://github.com/sindresorhus/p-try)_
+_Documenation from [source package](https://github.com/sindresorhus/p-try)_ | _[Back to packages](#packages)_
 
 > Start a promise chain
 
@@ -2266,7 +2266,7 @@ Arguments to pass to `fn`.
 
 ### p-race
 
-_Documenation from [source package](https://github.com/sindresorhus/p-race)_
+_Documenation from [source package](https://github.com/sindresorhus/p-race)_ | _[Back to packages](#packages)_
 
 > A better [`Promise.race()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise/race)
 
@@ -2324,7 +2324,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-immediate
 
-_Documenation from [source package](https://github.com/sindresorhus/p-immediate)_
+_Documenation from [source package](https://github.com/sindresorhus/p-immediate)_ | _[Back to packages](#packages)_
 
 > Returns a promise resolved in the next event loop - think [`setImmediate()`](https://nodejs.org/api/timers.html#timers_setimmediate_callback_arg)
 
@@ -2356,7 +2356,7 @@ console.log('🦄');
 
 ### p-time
 
-_Documenation from [source package](https://github.com/sindresorhus/p-time)_
+_Documenation from [source package](https://github.com/sindresorhus/p-time)_ | _[Back to packages](#packages)_
 
 > Measure the time a promise takes to resolve
 
@@ -2402,7 +2402,7 @@ Promise-returning/async function.
 
 ### p-defer
 
-_Documenation from [source package](https://github.com/sindresorhus/p-defer)_
+_Documenation from [source package](https://github.com/sindresorhus/p-defer)_ | _[Back to packages](#packages)_
 
 > Create a deferred promise
 
@@ -2444,7 +2444,7 @@ Returns an `object` with a `promise` property and functions to `resolve()` and `
 
 ### p-is-promise
 
-_Documenation from [source package](https://github.com/sindresorhus/p-is-promise)_
+_Documenation from [source package](https://github.com/sindresorhus/p-is-promise)_ | _[Back to packages](#packages)_
 
 > Check if something is a promise
 
@@ -2495,7 +2495,7 @@ isPromise('🦄');
 
 ### p-state
 
-_Documenation from [source package](https://github.com/sindresorhus/p-state)_
+_Documenation from [source package](https://github.com/sindresorhus/p-state)_ | _[Back to packages](#packages)_
 
 > Inspect the state of a promise
 
@@ -2555,7 +2555,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-queue
 
-_Documenation from [source package](https://github.com/sindresorhus/p-queue)_
+_Documenation from [source package](https://github.com/sindresorhus/p-queue)_ | _[Back to packages](#packages)_
 
 > Promise queue with concurrency control
 
@@ -2626,7 +2626,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### make-synchronous
 
-_Documenation from [source package](https://github.com/sindresorhus/make-synchronous)_
+_Documenation from [source package](https://github.com/sindresorhus/make-synchronous)_ | _[Back to packages](#packages)_
 
 > Make an asynchronous function synchronous
 
@@ -2687,7 +2687,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### expiry-map
 
-_Documenation from [source package](https://github.com/SamVerschueren/expiry-map)_
+_Documenation from [source package](https://github.com/SamVerschueren/expiry-map)_ | _[Back to packages](#packages)_
 
 ![CI](https://github.com/SamVerschueren/expiry-map/workflows/CI/badge.svg) [![codedov](https://codecov.io/gh/SamVerschueren/expiry-map/branch/master/graph/badge.svg)](https://codecov.io/gh/SamVerschueren/expiry-map)
 
@@ -2740,7 +2740,7 @@ _see the rest of the docs in the [source package](https://github.com/SamVerschue
 
 ### stale-while-revalidate-cache
 
-_Documenation from [source package](https://www.npmjs.com/package/stale-while-revalidate-cache)_
+_Documenation from [source package](https://www.npmjs.com/package/stale-while-revalidate-cache)_ | _[Back to packages](#packages)_
 
 # Stale While Revalidate Cache
 
@@ -2819,7 +2819,7 @@ _see the rest of the docs in the [source package](https://www.npmjs.com/package/
 
 ### p-catch-if
 
-_Documenation from [source package](https://github.com/sindresorhus/p-catch-if)_
+_Documenation from [source package](https://github.com/sindresorhus/p-catch-if)_ | _[Back to packages](#packages)_
 
 > Conditional promise catch handler
 
@@ -2876,7 +2876,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-if
 
-_Documenation from [source package](https://github.com/sindresorhus/p-if)_
+_Documenation from [source package](https://github.com/sindresorhus/p-if)_ | _[Back to packages](#packages)_
 
 > Conditional promise chains
 
@@ -2930,7 +2930,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-tap
 
-_Documenation from [source package](https://github.com/sindresorhus/p-tap)_
+_Documenation from [source package](https://github.com/sindresorhus/p-tap)_ | _[Back to packages](#packages)_
 
 > Tap into a promise chain without affecting its value or state
 
@@ -2989,7 +2989,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-log
 
-_Documenation from [source package](https://github.com/sindresorhus/p-log)_
+_Documenation from [source package](https://github.com/sindresorhus/p-log)_ | _[Back to packages](#packages)_
 
 > Log the value/error of a promise
 
@@ -3049,7 +3049,7 @@ _see the rest of the docs in the [source package](https://github.com/sindresorhu
 
 ### p-break
 
-_Documenation from [source package](https://github.com/sindresorhus/p-break)_
+_Documenation from [source package](https://github.com/sindresorhus/p-break)_ | _[Back to packages](#packages)_
 
 > Break out of a promise chain
 

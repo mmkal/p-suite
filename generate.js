@@ -89,7 +89,7 @@ const generate = async () => {
             return [
                 `### ${p.package}`,
                 '\n\n',
-                `_Documenation from [source package](${p.url})_`,
+                `_Documenation from [source package](${p.url})_ | _[Back to packages](#packages)_`,
                 '\n\n',
                 trimmedContent,
                 '\n\n',
