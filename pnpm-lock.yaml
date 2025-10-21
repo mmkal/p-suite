@@ -20,6 +20,9 @@ importers:
       make-synchronous:
         specifier: ^2.0.1
         version: 2.0.1
+      memoize:
+        specifier: ^10.1.0
+        version: 10.1.0
       p-all:
         specifier: ^5.0.1
         version: 5.0.1
@@ -648,6 +651,10 @@ packages:
   map-age-cleaner@0.2.0:
     resolution: {integrity: sha512-AvxTC6id0fzSf6OyNBTp1syyCuKO7nOJvHgYlhT0Qkkjvk40zZo+av3ayVgXlxnF/DxEzEfY9mMdd7FHsd+wKQ==}
     engines: {node: '>=7.6'}
+
+  memoize@10.1.0:
+    resolution: {integrity: sha512-MMbFhJzh4Jlg/poq1si90XRlTZRDHVqdlz2mPyGJ6kqMpyHUyVpDd5gpFAvVehW64+RA1eKE9Yt8aSLY7w2Kgg==}
+    engines: {node: '>=18'}
 
   mimic-function@5.0.1:
     resolution: {integrity: sha512-VP79XUPxV2CigYP3jWwAUFSku2aKqBH7uTAapFWCBqutsbmDo96KY5o8uh6U+/YSIn5OxJnXp73beVkpqMIGhA==}
@@ -1466,6 +1473,10 @@ snapshots:
   map-age-cleaner@0.2.0:
     dependencies:
       p-defer: 1.0.0
+
+  memoize@10.1.0:
+    dependencies:
+      mimic-function: 5.0.1
 
   mimic-function@5.0.1: {}
 

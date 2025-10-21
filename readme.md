@@ -97,6 +97,8 @@ _Not part of promise-fun but often useful in combination with some of the packag
 
 - [**expiry-map**](#expiry-map): A Map implementation with expirable items
 - [**stale-while-revalidate-cache**](#stale-while-revalidate-cache): undefined
+- [**memoize**](#memoize): Memoize functions - An optimization used to speed up consecutive function calls by caching the result of calls with identical input
+- [**dataloader**](#dataloader): A data loading utility to reduce requests to a backend via batching and caching.
 
 ## `.then`/`.catch`-based packages
 
@@ -1100,7 +1102,7 @@ Useful for speeding up consecutive function calls by caching the result of calls
 
 By default, **only the memoized function's first argument is considered** via strict equality comparison. If you need to cache multiple arguments or cache `object`s _by value_, have a look at alternative [caching strategies](#caching-strategy) below.
 
-This package is similar to [memoize](https://github.com/sindresorhus/memoize) but with async-specific enhancements; in particular, it allows for asynchronous caches and does not cache rejected promises.
+This package is similar to [memoize](#memoize) but with async-specific enhancements; in particular, it allows for asynchronous caches and does not cache rejected promises.
 
 ##### Install
 
@@ -2818,6 +2820,186 @@ const result3 = await swr(cacheKey, async () => 'yet-another-return-value');
 ```
 
 _see the rest of the docs in the [source package](https://www.npmjs.com/package/stale-while-revalidate-cache)_
+
+### memoize
+
+_Documenation from [source package](https://github.com/sindresorhus/memoize)_ | _[Back to packages](#packages)_
+
+> [Memoize](https://en.wikipedia.org/wiki/Memoization) functions - An optimization used to speed up consecutive function calls by caching the result of calls with identical input
+
+Memory is automatically released when an item expires or the cache is cleared.
+
+<!-- Please keep this section in sync with https://github.com/sindresorhus/p-memoize/blob/main/readme.md -->
+
+By default, **only the memoized function's first argument is considered** via strict equality comparison. If you need to cache multiple arguments or cache `object`s _by value_, have a look at alternative [caching strategies](#caching-strategy) below.
+
+If you want to memoize Promise-returning functions (like `async` functions), you might be better served by [p-memoize](#p-memoize).
+
+##### Install
+
+```sh
+npm install p-suite
+```
+
+##### Usage
+
+```js
+import memoize from 'p-suite/memoize';
+
+let index = 0;
+const counter = () => ++index;
+const memoized = memoize(counter);
+
+memoized('foo');
+//=> 1
+
+// Cached as it's the same argument
+memoized('foo');
+//=> 1
+
+// Not cached anymore as the argument changed
+memoized('bar');
+//=> 2
+
+memoized('bar');
+//=> 2
+
+// Only the first argument is considered by default
+memoized('bar', 'foo');
+//=> 2
+```
+
+##### Works well with Promise-returning functions
+
+But you might want to use [p-memoize](#p-memoize) for more Promise-specific behaviors.
+
+```js
+import memoize from 'p-suite/memoize';
+
+let index = 0;
+const counter = async () => ++index;
+const memoized = memoize(counter);
+
+console.log(await memoized());
+//=> 1
+
+// The return value didn't increase as it's cached
+console.log(await memoized());
+//=> 1
+```
+
+```js
+import memoize from 'p-suite/memoize';
+import got from 'got';
+import delay from 'delay';
+
+const memoizedGot = memoize(got, {maxAge: 1000});
+
+await memoizedGot('https://sindresorhus.com');
+
+// This call is cached
+await memoizedGot('https://sindresorhus.com');
+
+await delay(2000);
+
+// This call is not cached as the cache has expired
+await memoizedGot('https://sindresorhus.com');
+```
+
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/memoize)_
+
+### dataloader
+
+_Documenation from [source package](https://github.com/graphql/dataloader)_ | _[Back to packages](#packages)_
+
+# DataLoader
+
+DataLoader is a generic utility to be used as part of your application's data
+fetching layer to provide a simplified and consistent API over various remote
+data sources such as databases or web services via batching and caching.
+
+[![Build Status](https://github.com/graphql/dataloader/actions/workflows/validation.yml/badge.svg)](https://github.com/graphql/dataloader/actions/workflows/validation.yml)
+[![Coverage Status](https://coveralls.io/repos/graphql/dataloader/badge.svg?branch=master&service=github)](https://coveralls.io/github/graphql/dataloader?branch=main)
+
+A port of the "Loader" API originally developed by [@schrockn][] at Facebook in
+2010 as a simplifying force to coalesce the sundry key-value store back-end
+APIs which existed at the time. At Facebook, "Loader" became one of the
+implementation details of the "Ent" framework, a privacy-aware data entity
+loading and caching layer within web server product code. This ultimately became
+the underpinning for Facebook's GraphQL server implementation and type
+definitions.
+
+DataLoader is a simplified version of this original idea implemented in
+JavaScript for Node.js services. DataLoader is often used when implementing a
+[graphql-js][] service, though it is also broadly useful in other situations.
+
+This mechanism of batching and caching data requests is certainly not unique to
+Node.js or JavaScript, it is also the primary motivation for
+[Haxl](https://github.com/facebook/Haxl), Facebook's data loading library
+for Haskell. More about how Haxl works can be read in this [blog post](https://code.facebook.com/posts/302060973291128/open-sourcing-haxl-a-library-for-haskell/).
+
+DataLoader is provided so that it may be useful not just to build GraphQL
+services for Node.js but also as a publicly available reference implementation
+of this concept in the hopes that it can be ported to other languages. If you
+port DataLoader to another language, please open an issue to include a link from
+this repository.
+
+##### Getting Started
+
+First, install DataLoader using npm.
+
+```sh
+npm install --save dataloader
+```
+
+To get started, create a `DataLoader`. Each `DataLoader` instance represents a
+unique cache. Typically instances are created per request when used within a
+web-server like [express][] if different users can see different things.
+
+> Note: DataLoader assumes a JavaScript environment with global ES6 `Promise`
+> and `Map` classes, available in all supported versions of Node.js.
+
+##### Batching
+
+Batching is not an advanced feature, it's DataLoader's primary feature.
+Create loaders by providing a batch loading function.
+
+```js
+const DataLoader = require('dataloader');
+
+const userLoader = new DataLoader(keys => myBatchGetUsers(keys));
+```
+
+A batch loading function accepts an Array of keys, and returns a Promise which
+resolves to an Array of values[<sup>\*</sup>](#batch-function).
+
+Then load individual values from the loader. DataLoader will coalesce all
+individual loads which occur within a single frame of execution (a single tick
+of the event loop) and then call your batch function with all requested keys.
+
+```js
+const user = await userLoader.load(1);
+const invitedBy = await userLoader.load(user.invitedByID);
+console.log(`User 1 was invited by ${invitedBy}`);
+
+// Elsewhere in your application
+const user = await userLoader.load(2);
+const lastInvited = await userLoader.load(user.lastInvitedID);
+console.log(`User 2 last invited ${lastInvited}`);
+```
+
+A naive application may have issued four round-trips to a backend for the
+required information, but with DataLoader this application will make at most
+two.
+
+DataLoader allows you to decouple unrelated parts of your application without
+sacrificing the performance of batch data-loading. While the loader presents an
+API that loads individual values, all concurrent requests will be coalesced and
+presented to your batch loading function. This allows your application to safely
+distribute data fetching requirements throughout your application and maintain
+minimal outgoing data requests.
+
+_see the rest of the docs in the [source package](https://github.com/graphql/dataloader)_
 
 ### p-catch-if
 

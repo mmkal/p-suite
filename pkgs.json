@@ -194,6 +194,14 @@
         {
           "name": "stale-while-revalidate-cache",
           "url": "https://www.npmjs.com/package/stale-while-revalidate-cache"
+        },
+        {
+          "name": "memoize",
+          "url": "https://github.com/sindresorhus/memoize"
+        },
+        {
+          "name": "dataloader",
+          "url": "https://github.com/graphql/dataloader"
         }
       ]
     },
