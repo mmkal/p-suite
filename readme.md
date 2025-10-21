@@ -40,6 +40,8 @@ If you're not sure which promise module you want to use yet, or you want to use 
 
 For browser usage, or if bundle size is a concern for any other reason, you can use the individual exports (for example `import pMemoize from 'p-suite/p-memoize'`) without negatively impacting your bundle size.
 
+Please consider [sponsoring sindresorhus](https://github.com/sponsors/sindresorhus) if you find this package useful.
+
 <!-- begin generated package docs -->
 
 ## Packages
