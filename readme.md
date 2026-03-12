@@ -96,7 +96,9 @@ Please consider [sponsoring sindresorhus](https://github.com/sponsors/sindresorh
 _Not part of promise-fun but often useful in combination with some of the packages above_
 
 - [**expiry-map**](#expiry-map): A Map implementation with expirable items
-- [**stale-while-revalidate-cache**](#stale-while-revalidate-cache): undefined
+- [**quick-lru**](#quick-lru): Simple “Least Recently Used” (LRU) cache
+- [**lru-cache**](#lru-cache): A cache object that deletes the least-recently-used items.
+- [**stale-while-revalidate-cache**](#stale-while-revalidate-cache): This small battle-tested TypeScript library is a storage-agnostic helper that implements a configurable stale-while-revalidate caching strategy for any functions, for any JavaScript environment.
 - [**memoize**](#memoize): Memoize functions - An optimization used to speed up consecutive function calls by caching the result of calls with identical input
 - [**dataloader**](#dataloader): A data loading utility to reduce requests to a backend via batching and caching.
 
@@ -181,7 +183,8 @@ _Documenation from [source package](https://github.com/sindresorhus/delay)_ | _[
 
 > Delay a promise a specified amount of time
 
-_If you target Node.js 16 or later, you can use `import {setTimeout} from 'node:timers/promises'; await setTimeout(1000);` instead. This package can still be useful if you need browser support or the extra features._
+> [!TIP]
+> If you target Node.js only, you can use `import {setTimeout} from 'node:timers/promises'; await setTimeout(1000);` instead. This package can still be useful if you need browser support or the extra features.
 
 ##### Install
 
@@ -224,25 +227,11 @@ Type: `number`
 
 Milliseconds to delay the promise.
 
+Unlike native `setTimeout`, this supports unlimited delay length.
+
 ##### options
 
 Type: `object`
-
-##### value
-
-Type: `unknown`
-
-A value to resolve in the returned promise.
-
-```js
-import delay from 'p-suite/delay';
-
-const result = await delay(100, {value: '🦄'});
-
-// Executed after 100 milliseconds
-console.log(result);
-//=> '🦄'
-```
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/delay)_
 
@@ -547,13 +536,17 @@ _Documenation from [source package](https://github.com/sindresorhus/p-throttle)_
 
 Also works with normal functions.
 
-It rate-limits function calls without discarding them, making it ideal for external API interactions where avoiding call loss is crucial.
+It rate-limits function calls without discarding them, making it ideal for external API interactions where avoiding call loss is crucial. All calls are queued and executed—the last call is guaranteed to run with its original context and arguments preserved.
 
 ##### Install
 
 ```sh
 npm install p-suite
 ```
+
+##### Browser
+
+This package works in the browser with modern browsers that support `WeakRef` and `FinalizationRegistry` (Chrome 84+, Firefox 79+, Safari 14.1+, Edge 84+).
 
 ##### Usage
 
@@ -586,12 +579,6 @@ for (let index = 1; index <= 6; index++) {
 //=> 5: 2s
 //=> 6: 2s
 ```
-
-##### API
-
-##### pThrottle(options)
-
-Returns a throttle function.
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-throttle)_
 
@@ -943,8 +930,8 @@ Think of it like an async version of [`Array#find`](https://developer.mozilla.or
 
 ##### Install
 
-```
-$ npm install p-suite
+```sh
+npm install p-suite
 ```
 
 ##### Usage
@@ -964,7 +951,7 @@ const files = [
 const foundPath = await pLocate(files, file => pathExists(file));
 
 console.log(foundPath);
-//=> 'rainbow'
+//=> 'rainbow.png'
 ```
 
 _The above is just an example. Use [`locate-path`](https://github.com/sindresorhus/locate-path) if you need this._
@@ -977,9 +964,11 @@ Returns a `Promise` that is fulfilled when `tester` resolves to `true` or the it
 
 ##### input
 
-Type: `Iterable<Promise | unknown>`
+Type: `Iterable<Promise | unknown> | AsyncIterable<unknown>`
 
-An iterable of promises/values to test.
+An iterable or async iterable of promises/values to test.
+
+When an `AsyncIterable` is given, it is iterated serially and the `concurrency` and `preserveOrder` options are not applicable.
 
 ##### tester(element)
 
@@ -1025,20 +1014,26 @@ Returns a `limit` function.
 
 ##### concurrency
 
-Type: `number`\
+Type: `number | object`\
 Minimum: `1`
 
 Concurrency limit.
 
-##### limit(fn, ...args)
+You can pass a number or an options object with a `concurrency` property.
 
-Returns the promise returned by calling `fn(...args)`.
+##### rejectOnClear
 
-##### fn
+Type: `boolean`\
+Default: `false`
 
-Type: `Function`
+Reject pending promises with an `AbortError` when `clearQueue()` is called.
+This is recommended if you await the returned promises, for example with `Promise.all`, so pending tasks do not remain unresolved after `clearQueue()`.
 
-Promise-returning/async function.
+```js
+import pLimit from 'p-suite/p-limit';
+
+const limit = pLimit({concurrency: 1});
+```
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-limit)_
 
@@ -2033,8 +2028,8 @@ Think of it like an async version of `while (true) {}`.
 
 ##### Install
 
-```
-$ npm install p-suite
+```sh
+npm install p-suite
 ```
 
 ##### Usage
@@ -2044,17 +2039,20 @@ Here we create some numbered fixtures. The `createFixture()` function returns a 
 ```js
 import pForever from 'p-suite/p-forever';
 
-pForever(async index => {
-	index++;
+pForever(
+	async index => {
+		index++;
 
-	if (index > 100) {
-		return pForever.end;
-	}
+		if (index > 100) {
+			return pForever.end;
+		}
 
-	await createFixture(index);
+		await createFixture(index);
 
-	return index;
-}, 0);
+		return index;
+	},
+	{initialValue: 0}
+);
 ```
 
 or
@@ -2074,8 +2072,6 @@ pForever(async () => {
 	await createFixture(index);
 });
 ```
-
-##### API
 
 _see the rest of the docs in the [source package](https://github.com/sindresorhus/p-forever)_
 
@@ -2742,6 +2738,178 @@ Milliseconds until an item in the `Map` expires.
 
 _see the rest of the docs in the [source package](https://github.com/SamVerschueren/expiry-map)_
 
+### quick-lru
+
+_Documenation from [source package](https://github.com/sindresorhus/quick-lru)_ | _[Back to packages](#packages)_
+
+[![Coverage Status](https://codecov.io/gh/sindresorhus/quick-lru/branch/main/graph/badge.svg)](https://codecov.io/gh/sindresorhus/quick-lru/branch/main)
+
+> Simple [“Least Recently Used” (LRU) cache](https://en.m.wikipedia.org/wiki/Cache_replacement_policies#Least_Recently_Used_.28LRU.29)
+
+Useful when you need to cache something and limit memory usage.
+
+See the [algorithm section](#algorithm) for implementation details.
+
+##### Install
+
+```sh
+npm install p-suite
+```
+
+##### Usage
+
+```js
+import QuickLRU from 'p-suite/quick-lru';
+
+const lru = new QuickLRU({maxSize: 1000});
+
+lru.set('🦄', '🌈');
+
+lru.has('🦄');
+//=> true
+
+lru.get('🦄');
+//=> '🌈'
+```
+
+##### API
+
+##### new QuickLRU(options?)
+
+Returns a new instance.
+
+It's a [`Map`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map) subclass.
+
+##### options
+
+Type: `object`
+
+##### maxSize
+
+_Required_\
+Type: `number`
+
+The target maximum number of items before evicting the least recently used items.
+
+> [!NOTE]
+> This package uses an [algorithm](#algorithm) which maintains between `maxSize` and `2 × maxSize` items for performance reasons. The cache may temporarily contain up to twice the specified size due to the dual-cache design that avoids expensive delete operations.
+
+_see the rest of the docs in the [source package](https://github.com/sindresorhus/quick-lru)_
+
+### lru-cache
+
+_Documenation from [source package](https://github.com/isaacs/node-lru-cache)_ | _[Back to packages](#packages)_
+
+A cache object that deletes the least-recently-used items.
+
+Specify a max number of the most recently used items that you
+want to keep, and this cache will keep that many of the most
+recently accessed items.
+
+This is not primarily a TTL cache, and does not make strong TTL
+guarantees. There is no preemptive pruning of expired items by
+default, but you _may_ set a TTL on the cache or on a single
+`set`. If you do so, it will treat expired items as missing, and
+delete them when fetched. If you are more interested in TTL
+caching than LRU caching, check out
+[@isaacs/ttlcache](http://npm.im/@isaacs/ttlcache).
+
+As of version 7, this is one of the most performant LRU
+implementations available in JavaScript, and supports a wide
+diversity of use cases. However, note that using some of the
+features will necessarily impact performance, by causing the
+cache to have to do more work. See the "Performance" section
+below.
+
+##### Installation
+
+```bash
+npm install p-suite --save
+```
+
+##### Usage
+
+```js
+// hybrid module, either works
+import {LRUCache} from 'p-suite/lru-cache';
+// or:
+const {LRUCache} = require('lru-cache');
+// or in minified form for web browsers:
+import {LRUCache} from 'http://unpkg.com/lru-cache@9/dist/mjs/index.min.mjs';
+
+// At least one of 'max', 'ttl', or 'maxSize' is required, to prevent
+// unsafe unbounded storage.
+//
+// In most cases, it's best to specify a max for performance, so all
+// the required memory allocation is done up-front.
+//
+// All the other options are optional, see the sections below for
+// documentation on what each one does.  Most of them can be
+// overridden for specific items in get()/set()
+const options = {
+	max: 500,
+
+	// for use with tracking overall storage size
+	maxSize: 5000,
+	sizeCalculation: (value, key) => {
+		return 1;
+	},
+
+	// for use when you need to clean up something when objects
+	// are evicted from the cache
+	dispose: (value, key, reason) => {
+		freeFromMemoryOrWhatever(value);
+	},
+
+	// for use when you need to know that an item is being inserted
+	// note that this does NOT allow you to prevent the insertion,
+	// it just allows you to know about it.
+	onInsert: (value, key, reason) => {
+		logInsertionOrWhatever(key, value);
+	},
+
+	// how long to live in ms
+	ttl: 1000 * 60 * 5,
+
+	// return stale items before removing from cache?
+	allowStale: false,
+
+	updateAgeOnGet: false,
+	updateAgeOnHas: false,
+
+	// async method to use for cache.fetch(), for
+	// stale-while-revalidate type of behavior
+	fetchMethod: async (key, staleValue, {options, signal, context}) => {}
+};
+
+const cache = new LRUCache(options);
+
+cache.set('key', 'value');
+cache.get('key'); // "value"
+
+// non-string keys ARE fully supported
+// but note that it must be THE SAME object, not
+// just a JSON-equivalent object.
+var someObject = {a: 1};
+cache.set(someObject, 'a value');
+// Object keys are not toString()-ed
+cache.set('[object Object]', 'a different value');
+assert.equal(cache.get(someObject), 'a value');
+// A similar object with same keys/values won't work,
+// because it's a different object identity
+assert.equal(cache.get({a: 1}), undefined);
+
+cache.clear(); // empty the cache
+```
+
+If you put more stuff in the cache, then less recently used items
+will fall out. That's what an LRU cache is.
+
+For full description of the API and all options, please see [the
+LRUCache typedocs](https://isaacs.github.io/node-lru-cache/)
+
+_see the rest of the docs in the [source package](https://github.com/isaacs/node-lru-cache)_
+
 ### stale-while-revalidate-cache
 
 _Documenation from [source package](https://www.npmjs.com/package/stale-while-revalidate-cache)_ | _[Back to packages](#packages)_
@@ -3315,6 +3483,16 @@ console.log(result);
 ### Is this affiliated with sindresorhus?
 
 No. It's a fork of the [promise-fun](https://github.com/sindresorhus/promise-fun) repo, but that only consists of a hand-written readme file pointing to the various other packages. Sindre very reasonably [did not want to maintain](https://github.com/sindresorhus/promise-fun/pull/26) a generated monopackage. It's also worth noting that as JavaScript develops some of the packages are less necessary - a handful of them existed before async/await, so only use as needed.
+
+### Which cache package should I use?
+
+If you just want a small in-memory cache with a familiar `Map`-like API, start with [`quick-lru`](#quick-lru). It is the simplest choice for size-bounded caching, and it also supports TTL via `maxAge` when you want basic time-based expiry without a lot of configuration.
+
+Use [`lru-cache`](#lru-cache) when cache policy is part of the problem you're solving rather than just an implementation detail. It is better when you need things like stale reads, weighted entry sizes, fetch helpers, TTL autopurging, disposal hooks, or tighter control over eviction behavior.
+
+Use [`stale-while-revalidate-cache`](#stale-while-revalidate-cache) when you want cached reads to stay fast while refreshes happen in the background. It is a better fit for data-fetching flows where returning a slightly stale value now is preferable to blocking on a refresh.
+
+Use [`expiry-map`](#expiry-map) when time-based expiry is the only thing you really care about and you do not need LRU behavior. For promise-heavy code, these caches are often most useful as the `cache` backing store for packages like [`memoize`](#memoize) and [`p-memoize`](#p-memoize).
 
 ### When is p-suite updated and published?
 
